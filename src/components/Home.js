@@ -10,7 +10,6 @@ class Home extends Component {
     return (
       <div className='home-container'>
         <div className='pokemon'>
-          <h1 className='pokemon-title'>Pokemon</h1>
           <span className='poke-frame' />
           <img
             src='https://i.ibb.co/7NtGcPs/Arcanine.gif'

@@ -1,0 +1,41 @@
+.home-container {
+  position: absolute;
+  z-index: 108;
+  top: 100px;
+  max-height: 795px;
+  left: 50px;
+  right: 0;
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 40px;
+}
+
+.pokemon-title {
+  color: white;
+  position: relative;
+  z-index: 110;
+  margin-top: 225px;
+  left: 40px;
+}
+
+.pokemon {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.poke-frame {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background-image: url('../assets/pokemon_frame.svg');
+}
+
+.home-pokemon {
+  margin-top: 40px;
+  width: auto;
+  height: 200px;
+}

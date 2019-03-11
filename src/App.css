@@ -1,33 +1,71 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.App-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
   color: white;
+  z-index: 150;
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-left {
+  width: 80px;
+  height: 99.8%;
+  position: absolute;
+  z-index: 105;
+  top: 0;
+  left: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar-right {
+  width: 80px;
+  height: 99.8%;
+  position: absolute;
+  z-index: 105;
+  top: 0;
+  right: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.bar-bottom {
+  width: 99.8%;
+  height: 80px;
+  position: absolute;
+  z-index: 105;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.dotted-grid {
+  background-image: url("./assets/dotted_grid.svg");
+  width: 90%;
+  height: 80%;
+  position: absolute;
+  z-index: 105;
+  top: 100px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.bg-image {
+  background-image: url("./assets/site_bg.png");
+  filter: blur(40px);
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
 }

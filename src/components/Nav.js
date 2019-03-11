@@ -13,7 +13,7 @@ const Nav = () => {
       />
       <NavLink
         exact={true}
-        to='/'
+        to='/home'
         className='links'
         activeClassName='is-active'
       >

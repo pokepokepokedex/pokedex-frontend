@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Search from './Search';
 
 import './Home.css';
+import Pokemon from './Pokemon';
 
 const Home = ({ pokemon }) => {
   return (
@@ -13,15 +14,7 @@ const Home = ({ pokemon }) => {
         {pokemon.map(poke => (
           <div key={poke.id}>
             <NavLink to={`/dashboard/${poke.id}`}>
-              <div className='pokemon'>
-                <h1 className='pokemon-name'>{poke.name}</h1>
-                <span className='poke-frame' />
-                <img
-                  src='https://i.ibb.co/k53vsg2/Pikachu.gif'
-                  alt='pokemon'
-                  className='home-pokemon'
-                />
-              </div>
+              <Pokemon poke={poke} />
             </NavLink>
           </div>
         ))}

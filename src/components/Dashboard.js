@@ -7,125 +7,133 @@ import './Dashboard.css';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      id: this.props.match.params.id
-    };
+    this.state = {};
   }
   render() {
-    return (
-      <div className='dashboard-container'>
-        <div className='pokemon-model'>
-          <img
-            src={require(`../assets/Mr.-Mime.gif`)}
-            alt='pokemon'
-            className='pokemon-dash'
-          />
-          <img
-            src={require(`../assets/Turntable.svg`)}
-            alt='turntable'
-            className='turntable'
-          />
-          <img
-            src={require(`../assets/Neon_Pokeball_Logo.svg`)}
-            alt='pokeball-logo'
-            className='pokeball-logo'
-          />
-        </div>
-        <div className='pokemon-title-tag'>
-          <h2>Mr. Mime</h2>
-          <div className='poke-info'>
-            <p>Type: PSYCHIC FAIRY</p>
-            <p>Evolution: 3</p>
-          </div>
-        </div>
-        <div className='stats'>
-          <div className='stat-container'>
-            <p>HP : 40</p>
-            <Progress
-              percent={40}
-              status='active'
-              theme={{
-                active: {
-                  color: 'rgb(255, 236, 67)',
-                  trailColor: 'rgba(255, 255, 255, 0)',
-                  symbol: '  '
-                }
-              }}
-            />
-          </div>
-          <div className='stat-container'>
-            <p>ATTACK : 45</p>
-            <Progress
-              percent={45}
-              status='active'
-              theme={{
-                active: {
-                  color: 'rgb(255, 236, 67)',
-                  trailColor: 'rgba(255, 255, 255, 0)',
-                  symbol: '  '
-                }
-              }}
-            />
-          </div>
-          <div className='stat-container'>
-            <p>DEFENSE : 65</p>
-            <Progress
-              percent={65}
-              status='active'
-              theme={{
-                active: {
-                  color: 'rgb(255, 236, 67)',
-                  trailColor: 'rgba(255, 255, 255, 0)',
-                  symbol: '  '
-                }
-              }}
-            />
-          </div>
-          <div className='stat-container'>
-            <p>SPEED : 90</p>
-            <Progress
-              percent={90}
-              status='active'
-              theme={{
-                active: {
-                  color: 'rgb(255, 236, 67)',
-                  trailColor: 'rgba(255, 255, 255, 0)',
-                  symbol: '  '
-                }
-              }}
-            />
-          </div>
-          <div className='stat-container'>
-            <p>SPECIAL DEFENSE : 120</p>
-            <Progress
-              percent={120}
-              status='active'
-              theme={{
-                active: {
-                  color: 'rgb(255, 236, 67)',
-                  trailColor: 'rgba(255, 255, 255, 0)',
-                  symbol: '  '
-                }
-              }}
-            />
-          </div>
-          <div className='stat-container'>
-            <p>SPECIAL ATTACK : 100</p>
-            <Progress
-              percent={100}
-              status='active'
-              theme={{
-                active: {
-                  color: 'rgb(255, 236, 67)',
-                  trailColor: 'rgba(255, 255, 255, 0)',
-                  symbol: '  '
-                }
-              }}
-            />
-          </div>
-        </div>
-      </div>
+    console.log(this.props);
+    const pokemon = this.props.pokemon.find(
+      pokemon => `${pokemon.id}` === this.props.match.params.id
     );
+    if (!pokemon) {
+      return <h1>Pokemon MIA</h1>;
+    } else {
+      return (
+        <div className='dashboard-container'>
+          <div className='pokemon-model'>
+            <img
+              src={`https://res.cloudinary.com/kingmuze/image/upload/v1552283064/${
+                pokemon.name
+              }.gif`}
+              alt='pokemon'
+              className='pokemon-dash'
+            />
+            <img
+              src={require(`../assets/Turntable.svg`)}
+              alt='turntable'
+              className='turntable'
+            />
+            <img
+              src={require(`../assets/Neon_Pokeball_Logo.svg`)}
+              alt='pokeball-logo'
+              className='pokeball-logo'
+            />
+          </div>
+          <div className='pokemon-title-tag'>
+            <h2>{pokemon.name}</h2>
+            <div className='poke-info'>
+              <p>Type:{pokemon.type1}</p>
+              <p>Abilities: {pokemon.abilities}</p>
+            </div>
+          </div>
+          <div className='stats'>
+            <div className='stat-container'>
+              <p>HP : {pokemon.hp}</p>
+              <Progress
+                percent={pokemon.hp}
+                status='active'
+                theme={{
+                  active: {
+                    color: 'rgb(255, 236, 67)',
+                    trailColor: 'rgba(255, 255, 255, 0)',
+                    symbol: '  '
+                  }
+                }}
+              />
+            </div>
+            <div className='stat-container'>
+              <p>ATTACK : {pokemon.attack}</p>
+              <Progress
+                percent={pokemon.attack}
+                status='active'
+                theme={{
+                  active: {
+                    color: 'rgb(255, 236, 67)',
+                    trailColor: 'rgba(255, 255, 255, 0)',
+                    symbol: '  '
+                  }
+                }}
+              />
+            </div>
+            <div className='stat-container'>
+              <p>DEFENSE : {pokemon.defense}</p>
+              <Progress
+                percent={pokemon.defense}
+                status='active'
+                theme={{
+                  active: {
+                    color: 'rgb(255, 236, 67)',
+                    trailColor: 'rgba(255, 255, 255, 0)',
+                    symbol: '  '
+                  }
+                }}
+              />
+            </div>
+            <div className='stat-container'>
+              <p>SPEED : {pokemon.defense}</p>
+              <Progress
+                percent={pokemon.defense}
+                status='active'
+                theme={{
+                  active: {
+                    color: 'rgb(255, 236, 67)',
+                    trailColor: 'rgba(255, 255, 255, 0)',
+                    symbol: '  '
+                  }
+                }}
+              />
+            </div>
+            <div className='stat-container'>
+              <p>SPECIAL DEFENSE : {pokemon.sp_defense}</p>
+              <Progress
+                percent={pokemon.sp_defense}
+                status='active'
+                theme={{
+                  active: {
+                    color: 'rgb(255, 236, 67)',
+                    trailColor: 'rgba(255, 255, 255, 0)',
+                    symbol: '  '
+                  }
+                }}
+              />
+            </div>
+            <div className='stat-container'>
+              <p>SPECIAL ATTACK : {pokemon.sp_attack}</p>
+              <Progress
+                percent={pokemon.sp_attack}
+                status='active'
+                theme={{
+                  active: {
+                    color: 'rgb(255, 236, 67)',
+                    trailColor: 'rgba(255, 255, 255, 0)',
+                    symbol: '  '
+                  }
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

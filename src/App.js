@@ -18,8 +18,8 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:8000/api/pokemon')
-      .then(res => this.setState({ pokemon: res.data }))
+      .get('https://pokepokepokedex.herokuapp.com/data')
+      .then(res => this.setState({ pokemon: res.data.data }))
       .catch(err => console.log(err));
   }
 
@@ -29,10 +29,15 @@ class App extends Component {
         <Route component={Nav} />
         <Route
           exact
-          path='/'
+          path='/home'
           render={props => <Home {...props} pokemon={this.state.pokemon} />}
         />
-        <Route component={Dashboard} path='/dashboard' />
+        <Route
+          path='/dashboard/:id'
+          render={props => (
+            <Dashboard {...props} pokemon={this.state.pokemon} />
+          )}
+        />
         <div className='bg-elements'>
           <span className='sidebar-left' />
           <span className='sidebar-right' />

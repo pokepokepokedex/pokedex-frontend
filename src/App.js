@@ -17,10 +17,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("https://pokepokepokedex.herokuapp.com/data")
-      .then(res => this.setState({ pokemon: res.data.data }))
-      .catch(err => console.log(err));
+    if (localStorage.get("token")) {
+      axios
+        .get("https://pokepokepokedex.herokuapp.com/data")
+        .then(res => this.setState({ pokemon: res.data.data }))
+        .catch(err => console.log(err));
+    } else {
+      this.props.history.push("/login");
+    }
   }
 
   render() {

@@ -13,7 +13,7 @@ class Dashboard extends Component {
       <div className='dashboard-container'>
         <div className='pokemon-model'>
           <img
-            src={require(`../assets/Tyranitar.gif`)}
+            src={require(`../assets/Mr.-Mime.gif`)}
             alt='pokemon'
             className='pokemon-dash'
           />
@@ -28,12 +28,15 @@ class Dashboard extends Component {
             className='pokeball-logo'
           />
         </div>
-        <div className='pokemon-title-box'>
-          <h2>Tyranitar</h2>
+        <div className='pokemon-title-tag'>
+          <h2>Pokemon</h2>
           <div className='poke-info'>
             <p>Type: Type Goes Here</p>
             <p>Evolution: Evolution Goes Here</p>
           </div>
+        </div>
+        <div className='stats'>
+          <p>HP: 0 </p>
         </div>
       </div>
     );

@@ -37,6 +37,11 @@ class Dashboard extends Component {
         </div>
         <div className='stats'>
           <p>HP: 0 </p>
+          <p>ATTACK: 0</p>
+          <p>DEFENSE: 0</p>
+          <p>SPEED: 0</p>
+          <p>SPECIAL DEFENSE: 0</p>
+          <p>SPECIAL ATTACK: 0</p>
         </div>
       </div>
     );

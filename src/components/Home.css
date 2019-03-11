@@ -1,8 +1,9 @@
 .home-container {
   position: absolute;
   z-index: 108;
+  padding-top: 30px;
   top: 90px;
-  max-height: 825px;
+  max-height: 795px;
   left: 50px;
   right: 0;
   margin: 0 auto;

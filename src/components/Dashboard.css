@@ -12,7 +12,7 @@
 .pokemon-title-tag {
   position: relative;
   top: 40px;
-  left: 0;
+  left: 1px;
   width: 30%;
   height: 150px;
   background-color: rgba(107, 107, 107, 0.164);
@@ -46,11 +46,13 @@
 }
 
 .stats {
+  text-align: right;
+  line-height: 15px;
   color: white;
   position: absolute;
-  top: 50vh;
-  left: 100px;
-  font-size: 2rem;
+  top: 54vh;
+  left: 50px;
+  font-size: 1.5rem;
 }
 
 .pokemon-dash {

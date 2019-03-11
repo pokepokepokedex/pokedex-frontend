@@ -10,9 +10,7 @@
 }
 
 .pokemon-title-tag {
-  position: relative;
-  top: 40px;
-  left: 1px;
+  margin-left: 20px;
   width: 30%;
   height: 150px;
   background-color: rgba(107, 107, 107, 0.164);

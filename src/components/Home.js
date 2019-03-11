@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Search from './Search';
+
 import './Home.css';
 
 class Home extends Component {
@@ -8,12 +10,15 @@ class Home extends Component {
   }
   render() {
     return (
+      <>
+      
+      <Search />
       <div className='home-container'>
         <div className='pokemon'>
           <h1 className='pokemon-name'>Pokemon</h1>
           <span className='poke-frame' />
           <img
-            src='https://i.ibb.co/7NtGcPs/Arcanine.gif'
+            src='https://i.ibb.co/k53vsg2/Pikachu.gif'
             alt='pokemon'
             className='home-pokemon'
           />
@@ -145,6 +150,7 @@ class Home extends Component {
           />
         </div>
       </div>
+      </>
     );
   }
 }

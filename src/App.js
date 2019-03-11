@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <>
         <Route component={Nav} />
-        <Route exact path='/home' component={Home} />
+        <Route exact path='/' component={Home} />
         <Route component={Dashboard} path='/dashboard' />
         <div className='bg-elements'>
           <span className='sidebar-left' />

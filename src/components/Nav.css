@@ -12,6 +12,14 @@
   position: fixed;
 }
 
+.pokemon-logo {
+  position: absolute;
+  left: 15px;
+  top: 22px;
+  width: 45px;
+  height: auto;
+}
+
 .links {
   text-decoration: none;
   color: white;

@@ -6,7 +6,12 @@ import './Nav.css';
 const Nav = () => {
   return (
     <div className='Nav'>
-      <NavLink to='/home' className='links'>
+      <img
+        src={require(`../assets/Logo.svg`)}
+        alt='icon'
+        className='pokemon-logo'
+      />
+      <NavLink to='/' className='links'>
         Home
       </NavLink>
       <NavLink to='dashboard' className='links'>

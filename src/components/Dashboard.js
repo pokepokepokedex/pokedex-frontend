@@ -21,7 +21,9 @@ class Dashboard extends Component {
         <div className='dashboard-container'>
           <div className='pokemon-model'>
             <img
-              src={require(`../assets/Mr.-Mime.gif`)}
+              src={`https://res.cloudinary.com/kingmuze/image/upload/v1552283064/${
+                pokemon.name
+              }.gif`}
               alt='pokemon'
               className='pokemon-dash'
             />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 
@@ -6,9 +7,11 @@ import './App.css';
 import Nav from './components/Nav';
 import Home from './components/Home';
 
+
 class App extends Component {
   render() {
     return (
+
       <>
         <Route component={Nav} />
         <Route exact path='/home' component={Home} />

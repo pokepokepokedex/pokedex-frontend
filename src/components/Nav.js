@@ -11,16 +11,21 @@ const Nav = () => {
         alt='icon'
         className='pokemon-logo'
       />
-      <NavLink to='/' className='links'>
+      <NavLink
+        exact={true}
+        to='/'
+        className='links'
+        activeClassName='is-active'
+      >
         Home
       </NavLink>
-      <NavLink to='dashboard' className='links'>
+      <NavLink to='/dashboard' className='links' activeClassName='is-active'>
         Dashboard
       </NavLink>
-      <NavLink to='backpack' className='links'>
+      <NavLink to='/backpack' className='links' activeClassName='is-active'>
         Backpack
       </NavLink>
-      <NavLink to='about' className='links'>
+      <NavLink to='/about' className='links' activeClassName='is-active'>
         About
       </NavLink>
     </div>

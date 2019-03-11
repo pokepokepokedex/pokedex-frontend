@@ -24,7 +24,7 @@
 
 .pokemon-name {
   position: absolute;
-  color: rgba(255, 255, 255, 0.89);
+  color: rgb(255, 255, 255);
   font-size: 2rem;
   letter-spacing: 4px;
   font-weight: 400;

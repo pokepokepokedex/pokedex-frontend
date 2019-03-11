@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="771" height="771" viewBox="0 0 771 771">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-5 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #f8ff33;
+        stroke-width: 6px;
+      }
+
+      .cls-1 {
+        stroke-linecap: round;
+      }
+
+      .cls-3 {
+        opacity: 0.18;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-6 {
+        filter: url(#Ellipse_5);
+      }
+
+      .cls-7 {
+        filter: url(#Ellipse_2);
+      }
+    </style>
+    <filter id="Ellipse_2" x="0" y="0" width="771" height="771" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="49.5" result="blur"/>
+      <feFlood flood-color="#f8ff33"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_5" x="166" y="166" width="439" height="439" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="49.5" result="blur-2"/>
+      <feFlood flood-color="#f8ff33"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Neon_Pokeball_Logo" data-name="Neon Pokeball Logo" transform="translate(-574.5 -113.5)">
+    <line id="Line_1" data-name="Line 1" class="cls-1" y1="411" x2="463" transform="translate(739.5 254.5)"/>
+    <path id="Path_14" data-name="Path 14" class="cls-1" d="M0,411,491.5-39.167" transform="translate(684.5 364.5)"/>
+    <g class="cls-7" transform="matrix(1, 0, 0, 1, 574.5, 113.5)">
+      <g id="Ellipse_2-2" data-name="Ellipse 2" class="cls-2" transform="translate(148.5 148.5)">
+        <circle class="cls-4" cx="237" cy="237" r="237"/>
+        <circle class="cls-5" cx="237" cy="237" r="234"/>
+      </g>
+    </g>
+    <g id="Ellipse_3" data-name="Ellipse 3" class="cls-3" transform="translate(684 223)">
+      <circle class="cls-4" cx="276" cy="276" r="276"/>
+      <circle class="cls-5" cx="276" cy="276" r="273"/>
+    </g>
+    <g class="cls-6" transform="matrix(1, 0, 0, 1, 574.5, 113.5)">
+      <g id="Ellipse_5-2" data-name="Ellipse 5" class="cls-2" transform="translate(314.5 314.5)">
+        <circle class="cls-4" cx="71" cy="71" r="71"/>
+        <circle class="cls-5" cx="71" cy="71" r="68"/>
+      </g>
+    </g>
+  </g>
+</svg>

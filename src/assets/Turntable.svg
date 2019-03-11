@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="651.037" height="387.87" viewBox="0 0 651.037 387.87">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1b201e;
+      }
+
+      .cls-2, .cls-4 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #272727;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        filter: url(#Ellipse_6);
+      }
+    </style>
+    <filter id="Ellipse_6" x="0" y="0" width="651.037" height="387.87" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="49.5" result="blur"/>
+      <feFlood/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Turntable" transform="translate(-657.481 -392.401)">
+    <g class="cls-5" transform="matrix(1, 0, 0, 1, 657.48, 392.4)">
+      <ellipse id="Ellipse_6-2" data-name="Ellipse 6" class="cls-1" cx="177.019" cy="45.435" rx="177.019" ry="45.435" transform="translate(148.5 148.5)"/>
+    </g>
+    <g id="Ellipse_7" data-name="Ellipse 7" class="cls-2" transform="translate(793 535)">
+      <ellipse class="cls-3" cx="190" cy="53.696" rx="190" ry="53.696"/>
+      <ellipse class="cls-4" cx="190" cy="53.696" rx="188.5" ry="52.196"/>
+    </g>
+  </g>
+</svg>

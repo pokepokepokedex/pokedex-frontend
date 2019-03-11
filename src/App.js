@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
 
 import './App.css';
 import Nav from './components/Nav';
@@ -10,8 +11,8 @@ class App extends Component {
     return (
       <>
         <Route component={Nav} />
-        <Route component={Home} />
-
+        <Route exact path='/home' component={Home} />
+        <Route component={Dashboard} path='/dashboard' />
         <div className='bg-elements'>
           <span className='sidebar-left' />
           <span className='sidebar-right' />

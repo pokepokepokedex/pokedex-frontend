@@ -1,8 +1,8 @@
 .home-container {
   position: absolute;
   z-index: 108;
-  top: 100px;
-  max-height: 795px;
+  top: 90px;
+  max-height: 825px;
   left: 50px;
   right: 0;
   margin: 0 auto;
@@ -10,13 +10,25 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-row-gap: 40px;
+  overflow: scroll;
 }
 
-.pokemon-title {
-  color: white;
+.home-container::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+.home-container::-webkit-scrollbar-corner {
+  visibility: hidden;
+}
+
+.pokemon-name {
   position: absolute;
-  z-index: 110;
-  top: 50px;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin-top: 240px;
+  text-align: left;
 }
 
 .pokemon {
@@ -40,7 +52,7 @@
 .poke-frame:hover {
   opacity: 1;
   transition: 0.3s ease-in-out;
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .home-pokemon {

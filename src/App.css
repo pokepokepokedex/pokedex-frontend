@@ -37,7 +37,7 @@
 }
 
 .dotted-grid {
-  background-image: url('./assets/dotted_grid.svg');
+  background-image: url("./assets/dotted_grid.svg");
   width: 90%;
   height: 80%;
   position: absolute;
@@ -49,7 +49,7 @@
 }
 
 .bg-image {
-  background-image: url('./assets/site_bg.png');
+  background-image: url("./assets/site_bg.png");
   filter: blur(40px);
   opacity: 0.2;
   position: absolute;

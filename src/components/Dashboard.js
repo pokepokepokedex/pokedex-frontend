@@ -8,7 +8,7 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //   pokemon: name
+      id: this.props.match.params.id
     };
   }
   render() {

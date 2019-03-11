@@ -1,0 +1,36 @@
+.Nav {
+  position: absolute;
+  z-index: 500;
+  width: 99.9%;
+  display: flex;
+  justify-content: center;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  top: 0;
+  left: 0;
+  padding: 28px 0;
+  position: fixed;
+}
+
+.pokemon-logo {
+  position: absolute;
+  left: 15px;
+  top: 22px;
+  width: 45px;
+  height: auto;
+}
+
+.links {
+  text-decoration: none;
+  color: white;
+  margin: 0px 50px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  transition: 0.2s ease-in-out;
+}
+
+.is-active {
+  color: white;
+  border-bottom: 2px solid white;
+}

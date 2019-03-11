@@ -1,0 +1,98 @@
+.dashboard-container {
+  position: absolute;
+  z-index: 108;
+  top: 90px;
+  max-height: 825px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 91.6%;
+}
+
+.pokemon-title-tag {
+  margin-left: 20px;
+  width: 30%;
+  height: 150px;
+  background-color: rgba(107, 107, 107, 0.164);
+}
+
+.pokemon-title-tag h2 {
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 20px;
+  padding-top: 20px;
+  margin-left: 20px;
+  font-size: 30px;
+}
+
+.poke-info {
+  margin-top: 20px;
+}
+
+.pokemon-title-tag p {
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 0px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.stat-container {
+  width: 400px;
+  display: flex;
+}
+
+.stat-container p {
+  padding-right: 20px;
+  width: 110%;
+  margin: 12px 0;
+  letter-spacing: 2px;
+}
+
+.stats {
+  text-align: right;
+  line-height: 15px;
+  color: white;
+  position: absolute;
+  top: 54vh;
+  left: 50px;
+  font-size: 1.5rem;
+}
+
+.pokemon-dash {
+  position: absolute;
+  z-index: 150;
+  width: auto;
+  height: 270%;
+  top: 40px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.turntable {
+  position: absolute;
+  z-index: 100;
+  top: 330px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: auto;
+  height: 300px;
+}
+
+.pokeball-logo {
+  position: absolute;
+  z-index: 90;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  user-select: none;
+  pointer-events: none;
+}

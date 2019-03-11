@@ -43,6 +43,18 @@
   font-size: 20px;
 }
 
+.stat-container {
+  width: 400px;
+  display: flex;
+}
+
+.stat-container p {
+  padding-right: 20px;
+  width: 110%;
+  margin: 12px 0;
+  letter-spacing: 2px;
+}
+
 .stats {
   text-align: right;
   line-height: 15px;
@@ -67,10 +79,12 @@
 .turntable {
   position: absolute;
   z-index: 100;
-  top: 280px;
+  top: 330px;
   right: 0;
   left: 0;
   margin: 0 auto;
+  width: auto;
+  height: 300px;
 }
 
 .pokeball-logo {

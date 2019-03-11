@@ -79,10 +79,12 @@
 .turntable {
   position: absolute;
   z-index: 100;
-  top: 280px;
+  top: 330px;
   right: 0;
   left: 0;
   margin: 0 auto;
+  width: auto;
+  height: 300px;
 }
 
 .pokeball-logo {

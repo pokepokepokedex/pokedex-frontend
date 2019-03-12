@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from "react";
+import axios from "axios";
 
-import './Login.css';
+import "./Login.css";
 
 export default class Login extends Component {
   state = {
     loginInfo: {
-      username: '',
-      password: ''
+      username: "",
+      password: ""
     }
   };
 
@@ -25,25 +25,25 @@ export default class Login extends Component {
     try {
       return await axios
         .post(
-          'https://pokepokepokedex.herokuapp.com/auth/login',
+          "https://pokepokepokedex.herokuapp.com/auth/login",
           this.state.loginInfo,
           {
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
               Authorization: window.localStorage.token
             }
           }
         )
         .then(res => {
           console.log(res);
-          localStorage.setItem('token', res.data.token);
+          localStorage.setItem("token", res.data.token);
           this.setState({
             registerInfo: {
-              username: '',
-              password: ''
+              username: "",
+              password: ""
             }
           });
-          this.props.history.push('/home');
+          this.props.history.push("/home");
         });
     } catch (error) {
       console.log(error);
@@ -53,20 +53,22 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.tryLogin} className='login-container'>
+        <form onSubmit={this.tryLogin} className="login-container">
           <input
-            type='text'
-            name='username'
+            type="text"
+            name="username"
             value={this.state.loginInfo.username}
             onChange={this.handleChanges}
+            placeholder="username"
           />
           <input
-            type='password'
-            name='password'
+            type="password"
+            name="password"
             value={this.state.loginInfo.password}
             onChange={this.handleChanges}
+            placeholder="password"
           />
-          <button>Log in</button>
+          <button className="log-in-btn">Log in</button>
         </form>
       </div>
     );

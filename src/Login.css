@@ -4,6 +4,29 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 500px;
+  top: 40%;
   z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container input {
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1.5px solid cyan;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.445);
+}
+
+.login-container input::placeholder {
+  color: white;
+}
+
+.log-in-btn {
+  width: 150px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
 }

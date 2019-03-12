@@ -37,7 +37,7 @@
 }
 
 .dotted-grid {
-  background-image: url("./assets/dotted_grid.svg");
+  background-image: url('./assets/dotted_grid.svg');
   width: 90%;
   height: 80%;
   position: absolute;
@@ -49,9 +49,9 @@
 }
 
 .bg-image {
-  background-image: url("./assets/site_bg.png");
+  background-image: url('./assets/site_bg.png');
   filter: blur(40px);
-  opacity: 0.2;
+  opacity: 0.3;
   position: absolute;
   top: 0;
   left: 0;
@@ -67,5 +67,5 @@
   z-index: 90;
   width: 100%;
   height: 100%;
-  background-color: #141414;
+  background-color: #030303;
 }

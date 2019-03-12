@@ -77,6 +77,21 @@ class Home extends Component {
             </button>
           </div>
         </div>
+
+        <img
+          src={require(`../assets/chevrons-left.svg`)}
+          alt="prev"
+          className={this.props.pageNumber === 1 ? "prev disabled" : "prev"}
+          name="prev"
+          onClick={pageChange}
+        />
+        <img
+          src={require(`../assets/chevrons-right.svg`)}
+          alt="next"
+          className="next"
+          name="next"
+          onClick={pageChange}
+        />
       </>
     );
   }

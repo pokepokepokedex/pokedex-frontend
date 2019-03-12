@@ -12,6 +12,16 @@
   position: fixed;
 }
 
+.title {
+  z-index: inherit;
+  position: absolute;
+  color: white;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-weight: 400;
+  top: 900px;
+}
+
 .pokemon-logo {
   position: absolute;
   left: 15px;
@@ -30,7 +40,13 @@
   transition: 0.2s ease-in-out;
 }
 
+.links:hover {
+  transition: 0.2s ease-in-out;
+  color: cyan;
+}
+
 .is-active {
-  color: white;
-  border-bottom: 2px solid white;
+  color: cyan;
+  text-shadow: 0px 0px 30px rgba(0, 204, 255, 0.603);
+  border-bottom: 2px solid cyan;
 }

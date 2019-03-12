@@ -10,20 +10,23 @@
 }
 
 .pokemon-title-tag {
+  margin-top: 20px;
   margin-left: 20px;
   padding-bottom: 20px;
   width: 30%;
   height: auto;
-  background-color: rgba(107, 107, 107, 0.164);
+
+  background-color: rgba(77, 77, 77, 0.199);
 }
 
 .pokemon-title-tag h2 {
+  border-top: 5px solid;
   width: 100px;
   color: white;
   font-weight: 400;
   text-transform: uppercase;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 5px;
   padding-top: 10px;
   margin-left: 20px;
   font-size: 30px;
@@ -69,8 +72,8 @@
   position: absolute;
   z-index: 150;
   width: auto;
-  height: 150%;
-  top: 220px;
+  max-height: 300px;
+  top: 190px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -99,6 +102,7 @@
   animation-direction: normal;
   width: auto;
   height: 560px;
+  filter: drop-shadow(0px 0px 10px initial);
 }
 
 @keyframes logorotate {
@@ -108,4 +112,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.pokemon-details {
+  border-top: 5px solid;
+  position: absolute;
+  right: 20px;
+  top: 590px;
+  margin-left: 20px;
+  padding-bottom: 20px;
+  width: 30%;
+  height: 150px;
+  background-color: rgba(107, 107, 107, 0.164);
+  width: 500px;
+}
+
+.pokemon-details p {
+  font-size: 1.4rem;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 12px 0;
+  letter-spacing: 2px;
+  line-height: 10px;
+  color: white;
+}
+
+.add-pokemon {
+  position: relative;
+  color: white;
+  top: 5px;
+  height: 50px;
+  left: 280px;
+  width: 200px;
+  border: 3px solid;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.add-pokemon:hover {
+  filter: brightness(120%);
+  background-color: rgba(56, 56, 56, 0.24);
 }

@@ -12,6 +12,16 @@
   position: fixed;
 }
 
+.title {
+  z-index: inherit;
+  position: absolute;
+  color: white;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  font-weight: 400;
+  top: 900px;
+}
+
 .pokemon-logo {
   position: absolute;
   left: 15px;

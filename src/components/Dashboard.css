@@ -17,18 +17,20 @@
 }
 
 .pokemon-title-tag h2 {
+  border-top: 5px solid yellow;
+  width: 40px;
   color: white;
   font-weight: 400;
   text-transform: uppercase;
   margin: 0;
   margin-top: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   margin-left: 20px;
   font-size: 30px;
 }
 
 .poke-info {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .pokemon-title-tag p {
@@ -36,11 +38,9 @@
   font-weight: 400;
   text-transform: uppercase;
   margin: 0;
-  margin-top: 0px;
-  line-height: 20px;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .stat-container {
@@ -69,8 +69,8 @@
   position: absolute;
   z-index: 150;
   width: auto;
-  height: 270%;
-  top: 40px;
+  height: 150%;
+  top: 220px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -84,7 +84,7 @@
   left: 0;
   margin: 0 auto;
   width: auto;
-  height: 300px;
+  height: 280px;
 }
 
 .pokeball-logo {
@@ -92,7 +92,20 @@
   z-index: 90;
   right: 0;
   left: 0;
-  margin: 0 auto;
+  margin: 120px auto;
   user-select: none;
   pointer-events: none;
+  animation: logorotate infinite 60s linear;
+  animation-direction: normal;
+  width: auto;
+  height: 560px;
+}
+
+@keyframes logorotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

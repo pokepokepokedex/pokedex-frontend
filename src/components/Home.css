@@ -24,7 +24,7 @@
 
 .pokemon-name {
   position: absolute;
-  color: rgba(255, 255, 255, 0.89);
+  color: rgb(255, 255, 255);
   font-size: 2rem;
   letter-spacing: 4px;
   font-weight: 400;
@@ -37,12 +37,13 @@
   height: 300px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .poke-frame {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 340px;
+  height: 340px;
   background-image: url('../assets/pokemon_frame.svg');
   background-repeat: no-repeat;
   opacity: 0.8;
@@ -53,12 +54,34 @@
 .poke-frame:hover {
   transition: 0.3s ease-in-out;
   opacity: 1;
-  transform: scale(1.05);
 }
 
 .home-pokemon {
-  margin-top: 75px;
-  width: auto;
-  height: 180px;
-  overflow: hidden;
+  margin-top: 100px;
+  max-width: 280px;
+  max-height: 200px;
+}
+
+.button-flex {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  width: 490%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-btn {
+  width: 150px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid rgb(0, 204, 255);
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.page-btn:hover {
+  transition: 0.2s ease-in-out;
+  background-color: rgba(0, 255, 255, 0.219);
 }

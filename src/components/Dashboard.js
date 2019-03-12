@@ -11,6 +11,8 @@ class Dashboard extends Component {
   }
   render() {
     console.log(this.props);
+    const fire = 'rgb(255, 41, 41)';
+
     const pokemon = this.props.pokemon.find(
       pokemon => `${pokemon.id}` === this.props.match.params.id
     );
@@ -21,7 +23,7 @@ class Dashboard extends Component {
         <div className='dashboard-container'>
           <div className='pokemon-model'>
             <img
-              src={`https://res.cloudinary.com/kingmuze/image/upload/v1552283064/${
+              src={`https://res.cloudinary.com/kingmuze/image/upload/v1552280621/Pokemon_Gifs/${
                 pokemon.name
               }.gif`}
               alt='pokemon'

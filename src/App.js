@@ -32,7 +32,7 @@ const App = props => {
     } else {
       props.history.push('/login');
     }
-  }, [localStorage.token.length]);
+  }, [state.pageNumber]);
 
   const pageChange = event => {
     // debugger;
@@ -76,7 +76,6 @@ const App = props => {
         <span className='bg-image' />
         <span className='blur' />
       </div>
-      <Login />
     </>
   );
 };

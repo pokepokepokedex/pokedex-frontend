@@ -128,6 +128,7 @@ class Dashboard extends Component {
               alt='turntable'
               className='turntable'
             />
+
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='552'

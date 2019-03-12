@@ -10,20 +10,23 @@
 }
 
 .pokemon-title-tag {
+  margin-top: 20px;
   margin-left: 20px;
+  padding-bottom: 20px;
   width: 30%;
-  height: 150px;
-  background-color: rgba(107, 107, 107, 0.164);
+  height: auto;
+
+  background-color: rgba(77, 77, 77, 0.199);
 }
 
 .pokemon-title-tag h2 {
-  border-top: 5px solid yellow;
-  width: 40px;
+  border-top: 5px solid;
+  width: 100px;
   color: white;
   font-weight: 400;
   text-transform: uppercase;
   margin: 0;
-  margin-top: 20px;
+  margin-top: 5px;
   padding-top: 10px;
   margin-left: 20px;
   font-size: 30px;
@@ -69,8 +72,9 @@
   position: absolute;
   z-index: 150;
   width: auto;
-  height: 150%;
-  top: 220px;
+  height: 350px;
+  max-height: 400px;
+  top: 120px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -79,12 +83,12 @@
 .turntable {
   position: absolute;
   z-index: 100;
-  top: 330px;
+  top: 290px;
   right: 0;
   left: 0;
   margin: 0 auto;
   width: auto;
-  height: 280px;
+  height: 300px;
 }
 
 .pokeball-logo {
@@ -99,6 +103,7 @@
   animation-direction: normal;
   width: auto;
   height: 560px;
+  filter: drop-shadow(0px 0px 10px initial);
 }
 
 @keyframes logorotate {
@@ -108,4 +113,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.pokemon-details {
+  border-top: 5px solid;
+  position: absolute;
+  right: 20px;
+  top: 600px;
+  margin-left: 20px;
+  height: 150px;
+  min-height: 120px;
+  width: 30%;
+  background-color: rgba(107, 107, 107, 0.164);
+}
+
+.detail-container {
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+
+.pokemon-details p {
+  margin: 0;
+  width: 90%;
+  font-size: 1.4rem;
+  padding-left: 20px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.add-pokemon {
+  position: absolute;
+  color: white;
+  top: 125px;
+  height: 50px;
+  left: 300px;
+  width: 200px;
+  border: 3px solid;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.add-pokemon:hover {
+  filter: brightness(120%);
+  background-color: rgba(56, 56, 56, 0.24);
 }

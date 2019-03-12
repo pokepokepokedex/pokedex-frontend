@@ -6,6 +6,7 @@ import './Nav.css';
 const Nav = () => {
   return (
     <div className='Nav'>
+      <h1 className='title'>Pokestat</h1>
       <img
         src={require(`../assets/Logo.svg`)}
         alt='icon'
@@ -26,7 +27,7 @@ const Nav = () => {
         Backpack
       </NavLink>
       <NavLink to='/about' className='links' activeClassName='is-active'>
-        About
+        Sign Out
       </NavLink>
     </div>
   );

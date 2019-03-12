@@ -3,8 +3,8 @@ import React from 'react';
 const Pokemon = ({ poke }) => {
   return (
     <div className='pokemon'>
-      <h1 className='pokemon-name'>{poke.name}</h1>
       <span className='poke-frame' />
+      <h1 className='pokemon-name'>{poke.name}</h1>
       <img
         src={`https://res.cloudinary.com/kingmuze/image/upload/v1/Pokemon_Gifs/${
           poke.name

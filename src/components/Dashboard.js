@@ -291,6 +291,9 @@ class Dashboard extends Component {
               />
             </div>
           </div>
+          <div className='pokemon-details'>
+                <
+          </div>
         </div>
       );
     }

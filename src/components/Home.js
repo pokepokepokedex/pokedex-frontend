@@ -19,17 +19,13 @@ class Home extends Component {
       <>
         <Search />
         <div className='home-container'>
-          {pokemon.map((poke, index) => {
-            if (index < 8) {
-              return (
-                <div key={poke.id}>
-                  <NavLink to={`/dashboard/${poke.id}`}>
-                    <Pokemon poke={poke} />
-                  </NavLink>
-                </div>
-              );
-            }
-          })}
+          {pokemon.map(poke => (
+            <div key={poke.id}>
+              <NavLink to={`/dashboard/${poke.id}`}>
+                <Pokemon poke={poke} />
+              </NavLink>
+            </div>
+          ))}
         </div>
 
         <img

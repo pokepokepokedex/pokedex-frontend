@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Register from "./Register";
 import Login from "./Login";
-import { Route, Link } from "react-router-dom";
+import { Route, withRouter, Link } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
@@ -33,8 +33,6 @@ class App extends Component {
         )
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
-    } else {
-      // this.props.history.push("/login");
     }
   }
 
@@ -55,7 +53,7 @@ class App extends Component {
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
-      // this.props.history.push('/login');
+      this.props.history.push("/login");
     }
   }
 
@@ -109,4 +107,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

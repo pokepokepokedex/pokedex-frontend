@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Searcg extends Component {
+class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,4 +16,4 @@ class Searcg extends Component {
   }
 }
 
-export default Searcg;
+export default Search;

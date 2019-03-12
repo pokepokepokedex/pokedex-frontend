@@ -208,7 +208,7 @@ class Dashboard extends Component {
           </h2>
           <div className='poke-info'>
             <p>Type:{pokemon.type1}</p>
-            <p>Abilities: {pokemon.abilities}</p>
+            <p>Generation: {pokemon.generation}</p>
           </div>
         </div>
         <div className='stats'>
@@ -303,9 +303,11 @@ class Dashboard extends Component {
             borderColor: determineColor(pokemon.type1)
           }}
         >
-          <p>Base Happiness: {pokemon.base_happiness}</p>
-          <p>Capture Rate: {pokemon.capture_rate}</p>
-          <p>Generation: {pokemon.generation}</p>
+          <div className='detail-container'>
+            <p>Base Happiness: {pokemon.base_happiness}</p>
+            <p>Capture Rate: {pokemon.capture_rate}</p>
+            <p>Abilities: {pokemon.abilities}</p>
+          </div>
           <button
             className='add-pokemon'
             style={{

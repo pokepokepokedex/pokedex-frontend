@@ -72,8 +72,9 @@
   position: absolute;
   z-index: 150;
   width: auto;
-  max-height: 300px;
-  top: 190px;
+  height: 350px;
+  max-height: 400px;
+  top: 120px;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -82,12 +83,12 @@
 .turntable {
   position: absolute;
   z-index: 100;
-  top: 330px;
+  top: 290px;
   right: 0;
   left: 0;
   margin: 0 auto;
   width: auto;
-  height: 280px;
+  height: 300px;
 }
 
 .pokeball-logo {
@@ -118,31 +119,34 @@
   border-top: 5px solid;
   position: absolute;
   right: 20px;
-  top: 590px;
+  top: 600px;
   margin-left: 20px;
-  padding-bottom: 20px;
-  width: 30%;
   height: 150px;
+  min-height: 120px;
+  width: 30%;
   background-color: rgba(107, 107, 107, 0.164);
-  width: 500px;
+}
+
+.detail-container {
+  margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 .pokemon-details p {
+  margin: 0;
+  width: 90%;
   font-size: 1.4rem;
-  padding-top: 20px;
   padding-left: 20px;
-  margin: 12px 0;
   letter-spacing: 2px;
-  line-height: 10px;
   color: white;
 }
 
 .add-pokemon {
-  position: relative;
+  position: absolute;
   color: white;
-  top: 5px;
+  top: 125px;
   height: 50px;
-  left: 280px;
+  left: 300px;
   width: 200px;
   border: 3px solid;
   background-color: rgba(255, 255, 255, 0);

@@ -19,32 +19,52 @@ class Home extends Component {
       <>
         <Search />
         <div className='home-container'>
-          {pokemon.map(poke => (
-            <div key={poke.id}>
-              <NavLink to={`/dashboard/${poke.id}`}>
-                <Pokemon poke={poke} />
-              </NavLink>
-            </div>
-          ))}
-          <div className='button-flex'>
-            <button
-              onClick={pageChange}
-              className='page-btn'
-              alt='previous'
-              name='prev'
-            >
-              Prev
-            </button>
-            <button
-              onClick={pageChange}
-              className='page-btn'
-              name='next'
-              alt='next'
-            >
-              Next
-            </button>
-          </div>
+          {pokemon.map((poke, index) => {
+            if (index < 8) {
+              return (
+                <div key={poke.id}>
+                  <NavLink to={`/dashboard/${poke.id}`}>
+                    <Pokemon poke={poke} />
+                  </NavLink>
+                </div>
+              );
+            }
+          })}
         </div>
+
+        <img
+          src={require(`../assets/chevrons-left.svg`)}
+          alt='prev'
+          className={this.props.pageNumber === 1 ? 'prev disabled' : 'prev'}
+          name='prev'
+          onClick={pageChange}
+        />
+        <img
+          src={require(`../assets/chevrons-right.svg`)}
+          alt='next'
+          className='next'
+          name='next'
+          onClick={pageChange}
+        />
+
+        {/* <div className='button-flex'>
+          <button
+            onClick={pageChange}
+            className='page-btn'
+            alt='previous'
+            name='prev'
+          >
+            Prev
+          </button>
+          <button
+            onClick={pageChange}
+            className='page-btn'
+            name='next'
+            alt='next'
+          >
+            <i class='icon ion-ios-arrow' />
+          </button>
+        </div> */}
       </>
     );
   }

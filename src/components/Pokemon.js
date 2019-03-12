@@ -6,7 +6,7 @@ const Pokemon = ({ poke }) => {
       <h1 className='pokemon-name'>{poke.name}</h1>
       <span className='poke-frame' />
       <img
-        src={`https://res.cloudinary.com/kingmuze/image/upload/v1552280621/Pokemon_Gifs/${
+        src={`https://res.cloudinary.com/kingmuze/image/upload/v1/Pokemon_Gifs/${
           poke.name
         }.gif`}
         alt='pokemon'

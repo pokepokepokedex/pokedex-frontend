@@ -11,6 +11,8 @@ class Dashboard extends Component {
   }
   render() {
     console.log(this.props);
+    const fire = 'rgb(255, 41, 41)';
+
     const pokemon = this.props.pokemon.find(
       pokemon => `${pokemon.id}` === this.props.match.params.id
     );

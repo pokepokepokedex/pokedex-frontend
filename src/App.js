@@ -12,19 +12,25 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      pokemon: []
+      pokemon: [],
+      pageNumber: 2
     };
   }
 
   componentDidUpdate() {
     if (localStorage.getItem('token')) {
       axios
-        .get('https://pokepokepokedex.herokuapp.com/api/pokemon?page=2', {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: window.localStorage.token
+        .get(
+          `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${
+            this.state.pageNumber
+          }`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: window.localStorage.token
+            }
           }
-        })
+        )
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
@@ -35,18 +41,36 @@ class App extends Component {
   componentDidMount() {
     if (localStorage.getItem('token')) {
       axios
-        .get('https://pokepokepokedex.herokuapp.com/api/pokemon?page=2', {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: window.localStorage.token
+        .get(
+          `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${
+            this.state.pageNumber
+          }`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              Authorization: window.localStorage.token
+            }
           }
-        })
+        )
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
       // this.props.history.push('/login');
     }
   }
+
+  pageChange = event => {
+    // debugger;
+    if (event.target.name === 'prev' && this.state.pageNumber === 1) {
+      return;
+    }
+
+    if (event.target.name === 'next') {
+      this.setState({ pageNumber: this.state.pageNumber + 1 });
+    } else {
+      this.setState({ pageNumber: this.state.pageNumber - 1 });
+    }
+  };
 
   render() {
     return (
@@ -55,7 +79,13 @@ class App extends Component {
         <Route
           exact
           path='/home'
-          render={props => <Home {...props} pokemon={this.state.pokemon} />}
+          render={props => (
+            <Home
+              {...props}
+              pokemon={this.state.pokemon}
+              pageChange={this.pageChange}
+            />
+          )}
         />
         <Route
           path='/dashboard/:id'

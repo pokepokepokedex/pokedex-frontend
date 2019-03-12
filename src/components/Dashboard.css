@@ -11,14 +11,14 @@
 
 .pokemon-title-tag {
   margin-left: 20px;
+  padding-bottom: 20px;
   width: 30%;
-  height: 150px;
+  height: auto;
   background-color: rgba(107, 107, 107, 0.164);
 }
 
 .pokemon-title-tag h2 {
-  border-top: 5px solid yellow;
-  width: 40px;
+  width: 100px;
   color: white;
   font-weight: 400;
   text-transform: uppercase;

@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import Register from "./Register";
 import Login from "./Login";
-import { Route, withRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import axios from "axios";
 import "./App.css";
+import Backpack from "./components/Backpack";
+
+console.log("hi");
 
 class App extends Component {
   state = {
@@ -16,6 +19,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
+    console.log(this.state.pageNumber);
     if (localStorage.getItem("token")) {
       axios
         .get(
@@ -32,7 +36,7 @@ class App extends Component {
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
-      this.props.history.push("/");
+      this.props.history.push("/login");
     }
   };
 
@@ -105,7 +109,9 @@ class App extends Component {
             <Dashboard {...props} pokemon={this.state.pokemon} />
           )}
         />
-        <Route exact path="/" component={Login} />
+
+        <Route path="/backpack" component={Backpack} />
+        <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <div className="bg-elements">
           <span className="sidebar-left" />

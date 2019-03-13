@@ -12,8 +12,7 @@ class Home extends Component {
     super(props);
     this.state = {
       search: "",
-      searchArray: [],
-      propsArray: []
+      searchArray: []
     };
   }
 
@@ -64,6 +63,7 @@ class Home extends Component {
       <>
         <div className="home-container">
           <Search
+            submitSearch={this.submitSearch}
             searchHandler={this.searchHandler}
             search={this.state.search}
           />

@@ -107,6 +107,101 @@ class Dashboard extends Component {
       return colorResult;
     };
 
+    const table = type => {
+      let tableResult;
+      switch (type) {
+        case 'fire':
+          {
+            tableResult = 'https://i.ibb.co/fMkqPdG/Turtable-fire.png';
+          }
+          break;
+        case 'water':
+          {
+            tableResult = 'https://i.ibb.co/hZLKDQW/Turtable-beach.png';
+          }
+          break;
+        case 'normal':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'poison':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'electric':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'ground':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'fairy':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'grass':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'bug':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'psychic':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'rock':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'fighting':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'ghost':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'ice':
+          {
+            tableResult = 'https://i.ibb.co/4Vv7hkZ/Turtable-snow.png';
+          }
+          break;
+        case 'dragon':
+          {
+            tableResult = 'https://i.ibb.co/fMkqPdG/Turtable-fire.png';
+          }
+          break;
+        case 'dark':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'flying':
+          {
+            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+          }
+          break;
+        case 'steel': {
+          tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+        }
+      }
+      return tableResult;
+    };
+
     const pokemon = this.props.pokemon.find(
       pokemon => `${pokemon.id}` === this.props.match.params.id
     );
@@ -128,8 +223,9 @@ class Dashboard extends Component {
             alt='pokemon'
             className='pokemon-dash'
           />
+
           <img
-            src={require(`../assets/Turntable.svg`)}
+            src={table(pokemon.type1)}
             alt='turntable'
             className='turntable'
           />

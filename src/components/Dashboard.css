@@ -7,6 +7,28 @@
   right: 0;
   margin: 0 auto;
   width: 91.6%;
+  height: auto;
+  overflow: scroll;
+}
+
+.dashboard-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dashboard-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.116);
+}
+
+.dashboard-container::-webkit-scrollbar-corner {
+  visibility: hidden;
+}
+
+.scroll-down {
+  position: absolute;
+  right: 0;
+  z-index: 8;
+  width: 50px;
+  transform: rotate(90deg);
 }
 
 .pokemon-title-tag {
@@ -159,4 +181,21 @@
 .add-pokemon:hover {
   filter: brightness(120%);
   background-color: rgba(56, 56, 56, 0.24);
+}
+
+/* << ================== STATS-PAGE ==================== >> */
+
+.Stat-Page {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.404);
+  top: 800px;
+  height: 83vh;
+}
+
+.Stat-Page p {
+  text-transform: uppercase;
+  color: white;
+  font-size: 5rem;
+  margin: 0;
+  text-align: center;
 }

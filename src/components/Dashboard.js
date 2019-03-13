@@ -115,6 +115,11 @@ class Dashboard extends Component {
       <h1>Pokemon MIA</h1>
     ) : (
       <div className='dashboard-container'>
+        <img
+          src={require(`../assets/chevrons-right.svg`)}
+          alt='arrow down'
+          className='scroll-down'
+        />
         <div className='pokemon-model'>
           <img
             src={`https://res.cloudinary.com/kingmuze/image/upload/v1552280621/Pokemon_Gifs/${
@@ -314,8 +319,11 @@ class Dashboard extends Component {
               borderColor: determineColor(pokemon.type1)
             }}
           >
-            + Add Pokemon
+            + Catch Pokemon
           </button>
+        </div>
+        <div className='Stat-Page'>
+          <p> {pokemon.name} STATS</p>
         </div>
       </div>
     );

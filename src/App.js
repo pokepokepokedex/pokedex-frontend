@@ -7,21 +7,23 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import axios from 'axios';
 import './App.css';
+import Backpack from './components/Backpack';
 
 console.log('hi');
 
-const App = props => {
-  const [state, setState] = useState({
+class App extends Component {
+  state = {
     pokemon: [],
     pageNumber: 1
-  });
+  };
 
-  useEffect(() => {
+  componentDidMount = () => {
+    console.log(this.state.pageNumber);
     if (localStorage.getItem('token')) {
       axios
         .get(
           `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${
-            state.pageNumber
+            this.state.pageNumber
           }`,
           {
             headers: {
@@ -30,57 +32,103 @@ const App = props => {
             }
           }
         )
-        .then(res => setState({ pokemon: res.data.data }))
+        .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
-      props.history.push('/login');
+      this.props.history.push('/login');
     }
-  }, [state.pageNumber]);
+  };
+  // const [state, setState] = useState({
+  //   pokemon: [],
+  //   pageNumber: 1
+  // });
+  // useEffect(() => {
 
-  const pageChange = event => {
+  // }, [state.pageNumber]);
+
+  pageChange = event => {
     // debugger;
-    if (event.target.name === 'prev' && state.pageNumber === 1) {
+    if (event.target.name === 'prev' && this.state.pageNumber === 1) {
       return;
     }
 
     if (event.target.name === 'next') {
-      setState({ pageNumber: state.pageNumber + 1 });
+      if (localStorage.getItem('token')) {
+        axios
+          .get(
+            `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${this.state
+              .pageNumber + 1}`,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: window.localStorage.token
+              }
+            }
+          )
+          .then(res => this.setState({ pokemon: res.data.data }))
+          .catch(err => console.log(err));
+      } else {
+        this.props.history.push('/login');
+      }
+      this.setState({ pageNumber: this.state.pageNumber + 1 });
     } else {
-      setState({ pageNumber: state.pageNumber - 1 });
+      if (localStorage.getItem('token')) {
+        axios
+          .get(
+            `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${this.state
+              .pageNumber - 1}`,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: window.localStorage.token
+              }
+            }
+          )
+          .then(res => this.setState({ pokemon: res.data.data }))
+          .catch(err => console.log(err));
+      } else {
+        this.props.history.push('/login');
+      }
+      this.setState({ pageNumber: this.state.pageNumber - 1 });
     }
   };
 
-  return (
-    <>
-      <Route component={Nav} />
-      <Route
-        exact
-        path='/home'
-        render={props => (
-          <Home
-            {...props}
-            pokemon={state.pokemon}
-            pageChange={pageChange}
-            pageNumber={state.pageNumber}
-          />
-        )}
-      />
-      <Route
-        path='/dashboard/:id'
-        render={props => <Dashboard {...props} pokemon={state.pokemon} />}
-      />
-      <Route exact path='/login' component={Login} />
-      <Route exact path='/register' component={Register} />
-      <div className='bg-elements'>
-        <span className='sidebar-left' />
-        <span className='sidebar-right' />
-        <span className='bar-bottom' />
-        <span className='dotted-grid' />
-        <span className='bg-image' />
-        <span className='blur' />
-      </div>
-    </>
-  );
-};
+  render() {
+    return (
+      <>
+        <Route component={Nav} />
+        <Route
+          exact
+          path='/home'
+          render={props => (
+            <Home
+              {...props}
+              pokemon={this.state.pokemon}
+              pageChange={this.pageChange}
+              pageNumber={this.state.pageNumber}
+            />
+          )}
+        />
+        <Route
+          path='/dashboard/:id'
+          render={props => (
+            <Dashboard {...props} pokemon={this.state.pokemon} />
+          )}
+        />
+        <Route path='/backpack' component={Backpack} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/register' component={Register} />
+        <div className='bg-elements'>
+          <span className='sidebar-left' />
+          <span className='sidebar-right' />
+          <span className='bar-bottom' />
+          <span className='dotted-grid' />
+          <span className='bg-image' />
+          <span className='blur' />
+        </div>
+      </>
+    );
+  }
+}
 
 export default App;

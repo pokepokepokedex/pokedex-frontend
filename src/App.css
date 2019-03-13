@@ -10,19 +10,23 @@
   width: 80px;
   height: 99.8%;
   position: absolute;
+  position: fixed;
   z-index: 105;
   top: 0;
   left: 0;
+  background-color: inherit;
   border-right: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .sidebar-right {
+  position: fixed;
   width: 80px;
   height: 99.8%;
   position: absolute;
   z-index: 105;
   top: 0;
   right: 0;
+  background-color: inherit;
   border-left: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -30,9 +34,11 @@
   width: 99.8%;
   height: 80px;
   position: absolute;
+  position: fixed;
   z-index: 105;
   bottom: 0;
   left: 0;
+  background-color: inherit;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
@@ -41,6 +47,7 @@
   width: 90%;
   height: 80%;
   position: absolute;
+  position: fixed;
   z-index: 105;
   top: 100px;
   right: 0;
@@ -53,6 +60,7 @@
   filter: blur(40px);
   opacity: 0.3;
   position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -62,6 +70,7 @@
 
 .blur {
   position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 90;

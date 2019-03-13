@@ -1,0 +1,13 @@
+.backpack-container {
+  position: absolute;
+  z-index: 108;
+  top: 90px;
+}
+
+.controls {
+  position: relative;
+  width: auto;
+  height: 200px;
+  left: 160px;
+  top: 550px;
+}

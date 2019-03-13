@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import Register from "./Register";
 import Login from "./Login";
 import { Route, withRouter } from "react-router-dom";
@@ -15,7 +15,6 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    console.log(this.state.pageNumber);
     if (localStorage.getItem("token")) {
       axios
         .get(
@@ -32,16 +31,9 @@ class App extends Component {
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
-      this.props.history.push("/login");
+      this.props.history.push("/");
     }
   };
-  // const [state, setState] = useState({
-  //   pokemon: [],
-  //   pageNumber: 1
-  // });
-  // useEffect(() => {
-
-  // }, [state.pageNumber]);
 
   pageChange = event => {
     // debugger;
@@ -112,7 +104,7 @@ class App extends Component {
             <Dashboard {...props} pokemon={this.state.pokemon} />
           )}
         />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
         <div className="bg-elements">
           <span className="sidebar-left" />

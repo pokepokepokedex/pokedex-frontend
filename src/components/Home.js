@@ -12,11 +12,13 @@ class Home extends Component {
     super(props);
     this.state = {
       search: "",
-      searchArray: []
+      searchArray: [],
+      propsArray: []
     };
   }
 
   searchHandler = e => {
+    e.preventDefault();
     this.setState({ search: e.target.value });
   };
 
@@ -32,7 +34,7 @@ class Home extends Component {
         .then(res => {
           console.log(res);
           this.setState({
-            searchArray: res
+            searchArray: res.data
           });
         });
     } catch (error) {
@@ -40,17 +42,31 @@ class Home extends Component {
     }
   }
 
+  choosePokemon = () => {
+    let pokemon = [];
+    if (this.state.search !== "") {
+      pokemon = this.state.searchArray;
+      console.log(pokemon);
+      pokemon = pokemon.filter(poke => poke.name.includes(this.state.search));
+      return pokemon;
+    } else {
+      pokemon = this.props.pokemon;
+      return pokemon;
+    }
+  };
+
   render() {
     const pageChange = this.props.pageChange;
-    const pokemon = this.props.pokemon;
+    // const pokemon = this.props.pokemon;
+    let pokemon = this.choosePokemon();
+    console.log(pokemon);
     return (
       <>
-        <Search
-          submitSearch={this.submitSearch}
-          searchHandler={this.searchHandler}
-          search={this.state.search}
-        />
         <div className="home-container">
+          <Search
+            searchHandler={this.searchHandler}
+            search={this.state.search}
+          />
           {pokemon &&
             pokemon.map(poke => (
               <div key={poke.id}>
@@ -59,26 +75,7 @@ class Home extends Component {
                 </NavLink>
               </div>
             ))}
-          <div className="button-flex">
-            <button
-              onClick={pageChange}
-              className="page-btn"
-              alt="previous"
-              name="prev"
-            >
-              Prev
-            </button>
-            <button
-              onClick={pageChange}
-              className="page-btn"
-              name="next"
-              alt="next"
-            >
-              Next
-            </button>
-          </div>
         </div>
-
         <img
           src={require(`../assets/chevrons-left.svg`)}
           alt="prev"

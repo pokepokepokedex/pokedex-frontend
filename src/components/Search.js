@@ -9,7 +9,7 @@ class Search extends Component {
   render() {
     return (
       <div className="search-container">
-        <form onChange={this.props.submitSearch}>
+        <form>
           <input
             placeholder="search"
             type="text"

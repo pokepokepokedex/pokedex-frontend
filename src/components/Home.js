@@ -51,13 +51,14 @@ class Home extends Component {
           search={this.state.search}
         />
         <div className="home-container">
-          {pokemon.map(poke => (
-            <div key={poke.id}>
-              <NavLink to={`/dashboard/${poke.id}`}>
-                <Pokemon poke={poke} />
-              </NavLink>
-            </div>
-          ))}
+          {pokemon &&
+            pokemon.map(poke => (
+              <div key={poke.id}>
+                <NavLink to={`/dashboard/${poke.id}`}>
+                  <Pokemon poke={poke} />
+                </NavLink>
+              </div>
+            ))}
           <div className="button-flex">
             <button
               onClick={pageChange}

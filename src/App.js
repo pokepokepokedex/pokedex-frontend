@@ -11,7 +11,8 @@ import "./App.css";
 class App extends Component {
   state = {
     pokemon: [],
-    pageNumber: 1
+    pageNumber: 1,
+    pokemonIDS: []
   };
 
   componentDidMount = () => {

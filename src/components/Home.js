@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import axios from 'axios';
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+import axios from "axios";
 
-import Search from './Search';
+import Search from "./Search";
 
-import './Home.css';
-import Pokemon from './Pokemon';
+import "./Home.css";
+import Pokemon from "./Pokemon";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
-      search: '',
+      search: "",
       searchArray: []
-
     };
   }
 
@@ -26,9 +24,9 @@ class Home extends Component {
   async componentDidMount() {
     try {
       return await axios
-        .get('https://pokepokepokedex.herokuapp.com/api/pokemon/all', {
+        .get("https://pokepokepokedex.herokuapp.com/api/pokemon/all", {
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
             Authorization: window.localStorage.token
           }
         })
@@ -63,14 +61,12 @@ class Home extends Component {
     console.log(pokemon);
     return (
       <>
-
-        <Search
-          submitSearch={this.submitSearch}
-          searchHandler={this.searchHandler}
-          search={this.state.search}
-        />
-        <div className='home-container'>
-
+        <div className="home-container">
+          <Search
+            submitSearch={this.submitSearch}
+            searchHandler={this.searchHandler}
+            search={this.state.search}
+          />
           {pokemon &&
             pokemon.map(poke => (
               <div key={poke.id}>
@@ -82,16 +78,16 @@ class Home extends Component {
         </div>
         <img
           src={require(`../assets/chevrons-left.svg`)}
-          alt='prev'
-          className={this.props.pageNumber === 1 ? 'prev disabled' : 'prev'}
-          name='prev'
+          alt="prev"
+          className={this.props.pageNumber === 1 ? "prev disabled" : "prev"}
+          name="prev"
           onClick={pageChange}
         />
         <img
           src={require(`../assets/chevrons-right.svg`)}
-          alt='next'
-          className='next'
-          name='next'
+          alt="next"
+          className="next"
+          name="next"
           onClick={pageChange}
         />
       </>

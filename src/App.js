@@ -8,11 +8,14 @@ import Home from './components/Home';
 import axios from 'axios';
 import './App.css';
 
+console.log('hi');
+
 const App = props => {
   const [state, setState] = useState({
     pokemon: [],
     pageNumber: 1
   });
+
   useEffect(() => {
     if (localStorage.getItem('token')) {
       axios
@@ -80,4 +83,4 @@ const App = props => {
   );
 };
 
-export default withRouter(App);
+export default App;

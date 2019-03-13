@@ -11,12 +11,15 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
       search: '',
       searchArray: []
+
     };
   }
 
   searchHandler = e => {
+    e.preventDefault();
     this.setState({ search: e.target.value });
   };
 
@@ -32,7 +35,7 @@ class Home extends Component {
         .then(res => {
           console.log(res);
           this.setState({
-            searchArray: res
+            searchArray: res.data
           });
         });
     } catch (error) {
@@ -40,17 +43,34 @@ class Home extends Component {
     }
   }
 
+  choosePokemon = () => {
+    let pokemon = [];
+    if (this.state.search !== "") {
+      pokemon = this.state.searchArray;
+      console.log(pokemon);
+      pokemon = pokemon.filter(poke => poke.name.includes(this.state.search));
+      return pokemon;
+    } else {
+      pokemon = this.props.pokemon;
+      return pokemon;
+    }
+  };
+
   render() {
     const pageChange = this.props.pageChange;
-    const pokemon = this.props.pokemon;
+    // const pokemon = this.props.pokemon;
+    let pokemon = this.choosePokemon();
+    console.log(pokemon);
     return (
       <>
+
         <Search
           submitSearch={this.submitSearch}
           searchHandler={this.searchHandler}
           search={this.state.search}
         />
         <div className='home-container'>
+
           {pokemon &&
             pokemon.map(poke => (
               <div key={poke.id}>
@@ -60,7 +80,6 @@ class Home extends Component {
               </div>
             ))}
         </div>
-
         <img
           src={require(`../assets/chevrons-left.svg`)}
           alt='prev'

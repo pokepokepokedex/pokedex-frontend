@@ -1,3 +1,4 @@
+
 import React, { Component, useEffect, useState } from 'react';
 import Register from './Register';
 import Login from './Login';
@@ -11,6 +12,7 @@ import Backpack from './components/Backpack';
 
 console.log('hi');
 
+
 class App extends Component {
   state = {
     pokemon: [],
@@ -18,8 +20,10 @@ class App extends Component {
   };
 
   componentDidMount = () => {
+
     console.log(this.state.pageNumber);
     if (localStorage.getItem('token')) {
+
       axios
         .get(
           `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${
@@ -35,16 +39,11 @@ class App extends Component {
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
+
       this.props.history.push('/login');
+
     }
   };
-  // const [state, setState] = useState({
-  //   pokemon: [],
-  //   pageNumber: 1
-  // });
-  // useEffect(() => {
-
-  // }, [state.pageNumber]);
 
   pageChange = event => {
     // debugger;
@@ -115,6 +114,7 @@ class App extends Component {
             <Dashboard {...props} pokemon={this.state.pokemon} />
           )}
         />
+
         <Route path='/backpack' component={Backpack} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
@@ -125,6 +125,7 @@ class App extends Component {
           <span className='dotted-grid' />
           <span className='bg-image' />
           <span className='blur' />
+
         </div>
       </>
     );

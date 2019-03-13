@@ -43,11 +43,15 @@ export default class Login extends Component {
               password: ""
             }
           });
-          this.props.history.push("/home");
+          window.location.href = "/home";
         });
     } catch (error) {
       console.log(error);
     }
+  };
+
+  takeToRegister = () => {
+    this.props.history.push("/register");
   };
 
   render() {
@@ -68,7 +72,12 @@ export default class Login extends Component {
             onChange={this.handleChanges}
             placeholder="password"
           />
-          <button className="log-in-btn">Log in</button>
+          <button onClick={this.tryLogin} className="log-in-btn">
+            Log in
+          </button>
+          <button onClick={this.takeToRegister} className="register-btn">
+            Need an account?
+          </button>
         </form>
       </div>
     );

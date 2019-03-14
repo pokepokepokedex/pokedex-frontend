@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Transformation } from 'cloudinary-react';
+// import { Image, Transformation } from 'cloudinary-react';
 
 const Pokemon = ({ poke, addDefaultSrc }) => {
   return (
@@ -10,20 +10,22 @@ const Pokemon = ({ poke, addDefaultSrc }) => {
         {' '}
         Type: {poke.type1} {poke.type2}{' '}
       </h6>
-      <Image
+      {/* <Image
         cloudName='kingmuze'
-        publicId={'fl_lossy/Pokemon_Gifs/' + `${poke.name}.gif`}
+        publicId={'/Pokemon_Gifs/' + `${poke.name}.gif`}
         className='home-pokemon'
         onError={addDefaultSrc}
-      />
-      {/* <img
-        src={`https://res.cloudinary.com/kingmuze/image/upload/v1552282722/Pokemon_Gifs/${
+      >
+        <Transformation flags='lossy' />
+      </Image> */}
+      <img
+        src={`http://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1/Pokemon_Gifs/${
           poke.name
         }.gif`}
         alt='pokemon'
         className='home-pokemon'
         onError={addDefaultSrc}
-      /> */}
+      />
     </div>
   );
 };

@@ -12,13 +12,16 @@ class Home extends Component {
     super(props);
     this.state = {
       search: '',
-      searchArray: []
+      searchArray: [],
+      type: '',
+      typeArray: []
     };
   }
 
-  searchHandler = e => {
-    e.preventDefault();
-    this.setState({ search: e.target.value });
+  searchHandler = event => {
+    console.log(event.target.value);
+    event.preventDefault();
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   async componentDidMount() {
@@ -33,7 +36,8 @@ class Home extends Component {
         .then(res => {
           console.log(res);
           this.setState({
-            searchArray: res.data
+            searchArray: res.data,
+            typeArray: res.data
           });
         });
     } catch (error) {
@@ -41,11 +45,23 @@ class Home extends Component {
     }
   }
 
+  chooseType = () => {
+    let pokemon = [];
+    if (this.state.type !== '') {
+      pokemon = this.state.typeArray;
+      pokemon = pokemon.filter(poke => poke.type1.includes(this.state.type));
+      console.log(pokemon);
+      return pokemon;
+    } else {
+      pokemon = this.props.pokemon;
+      return pokemon;
+    }
+  };
+
   choosePokemon = () => {
     let pokemon = [];
     if (this.state.search !== '') {
       pokemon = this.state.searchArray;
-      console.log(pokemon);
       pokemon = pokemon.filter(poke => poke.name.includes(this.state.search));
       return pokemon;
     } else {
@@ -63,6 +79,7 @@ class Home extends Component {
     const pageChange = this.props.pageChange;
     // const pokemon = this.props.pokemon;
     let pokemon = this.choosePokemon();
+    let type = this.chooseType();
     return (
       <>
         <div className='home-container'>
@@ -70,8 +87,9 @@ class Home extends Component {
             submitSearch={this.submitSearch}
             searchHandler={this.searchHandler}
             search={this.state.search}
+            type={this.state.type}
           />
-          {pokemon &&
+          {(pokemon || type) &&
             pokemon.map(poke => (
               <div key={poke.id}>
                 <NavLink to={`/dashboard/${poke.id}`}>

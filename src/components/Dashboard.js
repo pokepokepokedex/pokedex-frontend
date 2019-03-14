@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Progress } from 'react-sweet-progress';
+// import { Image, Transformation } from 'cloudinary-react';
 import Plot from 'react-plotly.js';
 import 'react-sweet-progress/lib/style.css';
 import axios from 'axios';
@@ -252,13 +253,22 @@ class Dashboard extends Component {
           className='scroll-down'
         />
         <div className='pokemon-model'>
+          {/* <Image
+            cloudName='kingmuze'
+            publicId={'/Pokemon_Gifs/' + `${pokemon.name}.gif`}
+            alt='pokemon'
+            className='pokemon-dash'
+            onError={this.props.addDefaultSrc}
+          >
+            <Transformation flags='lossy' />
+          </Image> */}
           <img
-            src={`https://res.cloudinary.com/kingmuze/image/upload/v1552280621/Pokemon_Gifs/${
+            src={`http://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1/Pokemon_Gifs/${
               pokemon.name
             }.gif`}
             alt='pokemon'
             className='pokemon-dash'
-            onError={this.props.addDefaultSrc}
+            onError={this.addDefaultSrc}
           />
 
           <img

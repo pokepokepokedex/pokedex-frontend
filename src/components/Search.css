@@ -1,9 +1,11 @@
 .search-container {
   position: absolute;
-  width: 320px;
+  width: 93%;
   left: 0;
   right: 0;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .search-container input {
@@ -19,4 +21,6 @@
 .search-container input::placeholder {
   color: white;
   text-align: center;
+  letter-spacing: 2px;
+  opacity: 0.2;
 }

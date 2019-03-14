@@ -65,7 +65,7 @@ class Home extends Component {
 
   addDefaultSrc(ev) {
     ev.target.src =
-      'https://img.rankedboost.com/wp-content/uploads/2017/05/Pokeball-Pokemon-Go.png';
+      'https://orig00.deviantart.net/0639/f/2011/134/6/5/pokemon_pokeball_pichu_by_kevintut-d3gallt.gif';
   }
 
   render() {

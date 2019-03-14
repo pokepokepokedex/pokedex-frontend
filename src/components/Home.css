@@ -33,7 +33,7 @@
   font-size: 2rem;
   letter-spacing: 4px;
   font-weight: 400;
-  margin-top: 70px;
+  margin-top: 80px;
   margin-left: 6%;
   text-align: left;
 }
@@ -45,7 +45,8 @@
   font-size: 1rem;
   letter-spacing: 4px;
   font-weight: 400;
-  margin-top: 110px;
+  margin-top: 120px;
+  margin-left: 6%;
   text-align: left;
 }
 
@@ -65,7 +66,7 @@
   height: 45%;
   background-image: url('../assets/pokemon_frame.svg');
   background-repeat: no-repeat;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: 0.3s ease-in-out;
   cursor: pointer;
 }

@@ -268,7 +268,7 @@ class Dashboard extends Component {
             }.gif`}
             alt='pokemon'
             className='pokemon-dash'
-            onError={this.addDefaultSrc}
+            onError={this.props.addDefaultSrc}
           />
 
           <img

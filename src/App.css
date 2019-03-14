@@ -6,6 +6,11 @@
   z-index: 150;
 }
 
+.bg-elements {
+  pointer-events: none;
+  user-select: none;
+}
+
 .sidebar-left {
   width: 80px;
   height: 99.8%;

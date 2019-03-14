@@ -1,5 +1,8 @@
 .Nav {
   position: absolute;
+
+  pointer-events: none;
+  user-select: none;
   z-index: 500;
   width: 99.9%;
   display: flex;
@@ -38,6 +41,7 @@
   font-size: 1.4rem;
   letter-spacing: 2px;
   transition: 0.2s ease-in-out;
+  pointer-events: all;
 }
 
 .links:hover {

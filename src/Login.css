@@ -15,10 +15,8 @@
   width: 400px;
   margin-bottom: 20px;
   padding: 10px;
-
-  border: 1.2px solid rgba(255, 255, 255, 0.39);
+  border: 1.3px solid rgba(6, 185, 255, 0.39);
   background-color: rgba(0, 0, 0, 0.25);
-
   color: white;
 }
 

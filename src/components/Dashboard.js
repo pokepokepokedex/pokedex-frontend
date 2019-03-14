@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
-import { Progress } from 'react-sweet-progress';
-// import { Image, Transformation } from 'cloudinary-react';
-import Plot from 'react-plotly.js';
-import 'react-sweet-progress/lib/style.css';
-import axios from 'axios';
-import './Dashboard.css';
+
+import React, { Component } from "react";
+import { Progress } from "react-sweet-progress";
+import "react-sweet-progress/lib/style.css";
+import axios from "axios";
+import "./Dashboard.css";
+import { NavLink, Link } from "react-router-dom";
+
 
 class Dashboard extends Component {
   constructor(props) {
@@ -456,14 +457,21 @@ class Dashboard extends Component {
             <p>Capture Rate: {pokemon.capture_rate}</p>
             <p>Abilities: {pokemon.abilities}</p>
           </div>
-          <button
-            className='add-pokemon'
-            style={{
-              borderColor: determineColor(pokemon.type1)
-            }}
+
+          <Link
+            onClick={() => this.props.addToBackpack(this.props.match.params.id)}
+            to="/backpack"
+
           >
-            + Catch Pokemon
-          </button>
+            <button
+              className="add-pokemon"
+              style={{
+                borderColor: determineColor(pokemon.type1)
+              }}
+            >
+              + Catch Pokemon
+            </button>
+          </Link>
         </div>
         <div className='Stat-Page'>
           <p> {pokemon.name} STATS</p>

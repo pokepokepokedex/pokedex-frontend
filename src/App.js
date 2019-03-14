@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
-import Register from './Register';
-import Login from './Login';
-import { Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import axios from 'axios';
-import './App.css';
-import Backpack from './components/Backpack';
+
+import React, { Component } from "react";
+import Register from "./Register";
+import Login from "./Login";
+import { Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import axios from "axios";
+import "./App.css";
+import Backpack from "./components/Backpack";
+
 
 class App extends Component {
   state = {
     pokemon: [],
     pageNumber: 1,
-    pokemonIDS: []
+    pokemonIDS: [],
+    backpackPokemon: [],
+    userInfo: []
   };
 
   componentDidMount = () => {
@@ -33,7 +37,9 @@ class App extends Component {
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
-      this.props.history.push('/login');
+
+      this.props.history.push("/");
+
     }
   };
 
@@ -84,10 +90,29 @@ class App extends Component {
     }
   };
 
-  addDefaultSrc(ev) {
-    ev.target.src =
-      'https://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1552582092/PokeBall.gif';
-  }
+
+  addToBackpack = id => {
+    this.setState(prevState => ({
+      backpackPokemon: [...prevState.backpackPokemon, id]
+    }));
+
+    axios
+      .post(
+        `https://pokepokepokedex.herokuapp.com/api/user/${
+          window.localStorage.id
+        }`,
+        this.state.backpackPokemon,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: window.localStorage.token
+          }
+        }
+      )
+      .then(res => this.setState({ backpackPokemon: res.data.backpack }))
+      .catch(err => console.log(err));
+  };
+
 
   render() {
     return (
@@ -111,21 +136,30 @@ class App extends Component {
             <Dashboard
               {...props}
               pokemon={this.state.pokemon}
-              addDefaultSrc={this.addDefaultSrc}
+
+              addToBackpack={this.addToBackpack}
+
             />
           )}
         />
 
-        <Route path='/backpack' component={Backpack} />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/register' component={Register} />
-        <div className='bg-elements'>
-          <span className='sidebar-left' />
-          <span className='sidebar-right' />
-          <span className='bar-bottom' />
-          <span className='dotted-grid' />
-          <span className='bg-image' />
-          <span className='blur' />
+
+        <Route
+          path="/backpack"
+          render={props => (
+            <Backpack {...props} backpackPokemon={this.state.backpackPokemon} />
+          )}
+        />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <div className="bg-elements">
+          <span className="sidebar-left" />
+          <span className="sidebar-right" />
+          <span className="bar-bottom" />
+          <span className="dotted-grid" />
+          <span className="bg-image" />
+          <span className="blur" />
+
         </div>
       </>
     );

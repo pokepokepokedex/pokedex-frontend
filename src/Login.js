@@ -55,6 +55,11 @@ export default class Login extends Component {
   takeToRegister = () => {
     this.props.history.push("/register");
   };
+  componentDidMount = () => {
+    if (localStorage.getItem("token")) {
+      this.props.history.push("/home");
+    }
+  };
 
   render() {
     return (

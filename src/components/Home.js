@@ -58,7 +58,7 @@ class Home extends Component {
       console.log(pokemon, 'poke');
       return pokemon;
     } else {
-      pokemon = this.state.searchArray;
+      pokemon = this.props.pokemon;
       return pokemon;
     }
   };

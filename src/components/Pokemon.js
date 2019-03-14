@@ -4,12 +4,15 @@ import React from 'react';
 const Pokemon = ({ poke, addDefaultSrc }) => {
   return (
     <div className='pokemon'>
-      <span className='poke-frame' />
-      <h1 className='pokemon-name'>{poke.name}</h1>
+      <img
+        src={require(`../assets/pokemon_frame.svg`)}
+        className='poke-frame'
+      />
+      {/* <h1 className='pokemon-name'>{poke.name}</h1>
       <h6 className='pokemon-type'>
         {' '}
         Type: {poke.type1} {poke.type2}{' '}
-      </h6>
+      </h6> */}
       {/* <Image
         cloudName='kingmuze'
         publicId={'/Pokemon_Gifs/' + `${poke.name}.gif`}

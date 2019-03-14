@@ -100,21 +100,23 @@ class Home extends Component {
             type={this.state.type}
             submitHandler={this.submitHandler}
           />
-          {this.state.search === ''
-            ? type.map(poke => (
-                <div key={poke.id}>
-                  <NavLink to={`/dashboard/${poke.id}`}>
-                    <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
-                  </NavLink>
-                </div>
-              ))
-            : pokemon.map(poke => (
-                <div key={poke.id}>
-                  <NavLink to={`/dashboard/${poke.id}`}>
-                    <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
-                  </NavLink>
-                </div>
-              ))}
+          <div className='pokemon-scroll'>
+            {this.state.search === ''
+              ? type.map(poke => (
+                  <div key={poke.id}>
+                    <NavLink to={`/dashboard/${poke.id}`}>
+                      <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
+                    </NavLink>
+                  </div>
+                ))
+              : pokemon.map(poke => (
+                  <div key={poke.id}>
+                    <NavLink to={`/dashboard/${poke.id}`}>
+                      <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
+                    </NavLink>
+                  </div>
+                ))}
+          </div>
         </div>
         <img
           src={require(`../assets/chevrons-left.svg`)}

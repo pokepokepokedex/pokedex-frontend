@@ -36,7 +36,7 @@ class App extends Component {
         .then(res => this.setState({ pokemon: res.data.data }))
         .catch(err => console.log(err));
     } else {
-      this.props.history.push("/login");
+      this.props.history.push("/");
     }
   };
 
@@ -111,7 +111,7 @@ class App extends Component {
         />
 
         <Route path="/backpack" component={Backpack} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
         <div className="bg-elements">
           <span className="sidebar-left" />

@@ -30,7 +30,7 @@
   text-transform: uppercase;
   position: absolute;
   color: rgba(255, 255, 255, 0.877);
-  font-size: 2rem;
+  font-size: 4vh;
   letter-spacing: 4px;
   font-weight: 400;
   margin-top: 80px;
@@ -63,7 +63,7 @@
   margin: 0;
   margin-top: 30px;
   width: auto;
-  height: 45%;
+  height: 36vh;
   background-image: url('../assets/pokemon_frame.svg');
   background-repeat: no-repeat;
   opacity: 0.85;
@@ -77,9 +77,9 @@
 }
 
 .home-pokemon {
-  max-width: 70%;
-  min-height: 200px;
-  max-height: 200px;
+  max-width: 30vh;
+  min-height: 22vh;
+  max-height: 22vh;
 }
 
 .button-flex {

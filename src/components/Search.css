@@ -1,4 +1,22 @@
 .search-container {
-  border: 5px solid white;
-  display: block;
+  position: absolute;
+  width: 320px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.search-container input {
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 6px;
+  border: none;
+  background-color: rgba(196, 196, 196, 0.068);
+  border: 1px solid rgba(128, 128, 128, 0.493);
+  color: white;
+}
+
+.search-container input::placeholder {
+  color: white;
+  text-align: center;
 }

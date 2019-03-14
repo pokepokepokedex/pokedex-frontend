@@ -2,27 +2,29 @@
   position: absolute;
   z-index: 108;
   padding-top: 30px;
-  top: 70px;
+  top: 100px;
   left: 0px;
   right: 0;
   margin: 0 auto;
   width: 90%;
+  height: 80vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-row-gap: 50px;
+  overflow: scroll;
 }
 
-/* .home-container::-webkit-scrollbar {
-  width: 5px;
+.home-container::-webkit-scrollbar {
+  width: 10px;
 }
 
 .home-container::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 225, 255);
+  background-color: rgba(255, 255, 255, 0.116);
 }
 
 .home-container::-webkit-scrollbar-corner {
   visibility: hidden;
-} */
+}
 
 .pokemon-name {
   text-transform: uppercase;
@@ -36,9 +38,14 @@
 }
 
 .pokemon-type {
-  color: white;
+  text-transform: uppercase;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.884);
+  font-size: 1rem;
+  letter-spacing: 4px;
   font-weight: 400;
-  text-decoration: none;
+  margin-top: 100px;
+  text-align: left;
 }
 
 .pokemon {
@@ -49,8 +56,8 @@
 
 .poke-frame {
   position: absolute;
-  width: 380px;
-  height: 380px;
+  width: 360px;
+  height: 360px;
   background-image: url('../assets/pokemon_frame.svg');
   background-repeat: no-repeat;
   opacity: 1;
@@ -64,7 +71,7 @@
 }
 
 .home-pokemon {
-  margin-top: 140px;
+  margin-top: 120px;
   max-width: 300px;
   min-height: 100px;
   max-height: 200px;
@@ -110,19 +117,3 @@
 .prev.disabled {
   opacity: 0;
 }
-
-/* .page-btn {
-  font-size: 1.5rem;
-  letter-spacing: 5px;
-  width: 200px;
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0);
-  border: 2px solid rgb(0, 204, 255);
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
-
-.page-btn:hover {
-  transition: 0.2s ease-in-out;
-  background-color: rgba(0, 255, 255, 0.219);
-} */

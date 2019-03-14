@@ -4,10 +4,10 @@ import { NavLink, Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav = () => {
+  const token = localStorage.getItem("token");
   const bye = () => {
     localStorage.clear();
   };
-
   return (
     <div className="Nav">
       <h1 className="title">Pokestat</h1>
@@ -32,7 +32,7 @@ const Nav = () => {
       </NavLink>
 
       <Link to="/" onClick={bye} className="links" activeClassName="is-active">
-        Sign Out
+        {token ? "Sign Out" : "Sign In"}
       </Link>
     </div>
   );

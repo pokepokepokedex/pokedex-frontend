@@ -15,7 +15,7 @@ class Backpack extends Component {
   componentDidMount = () => {
     axios
       .get(
-        `https://pokepokepokedex.herokuapp.com/api/user${
+        `https://pokepokepokedex.herokuapp.com/api/backpack/${
           window.localStorage.id
         }`,
         {
@@ -25,18 +25,22 @@ class Backpack extends Component {
           }
         }
       )
-      .then(res => this.setState({ pokemon: res.data }))
+      .then(res => {
+        this.setState({ pokemon: res.data });
+        console.log(res);
+      })
       .catch(err => console.log(err));
   };
 
   render() {
     let pokemon = this.state.pokemon;
+    console.log(pokemon);
     return (
       <div className="backpack-container">
         {pokemon &&
           pokemon.map(poke => (
             <div key={poke.id}>
-              <NavLink to={`/dashboard/${poke.id}`}>
+              <NavLink to={`/dashboard/${poke.pokedex_number}`}>
                 <Pokemon poke={poke} />
               </NavLink>
             </div>

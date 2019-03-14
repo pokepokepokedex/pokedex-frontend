@@ -1,6 +1,7 @@
 .search-container {
   position: absolute;
-  width: 90%;
+  padding-top: 20px;
+  width: 94%;
   left: 0;
   right: 0;
   margin: 0 auto;

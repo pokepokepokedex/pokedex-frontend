@@ -7,7 +7,7 @@ const Pokemon = ({ poke, addDefaultSrc }) => {
       <h1 className='pokemon-name'>{poke.name}</h1>
       <h6 className='pokemon-type'>
         {' '}
-        Type: {poke.type1} {poke.type2}{' '}
+        Type: {poke.type1} {poke.type2}
       </h6>
       <div className='pokemon'>
         <img

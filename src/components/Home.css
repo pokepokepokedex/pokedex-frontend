@@ -1,20 +1,14 @@
 .home-container {
   position: absolute;
   z-index: 200;
-  top: 25px;
+  top: 93px;
+  padding-top: 20px;
   left: 0px;
   right: 0;
   margin: 0 auto;
-  width: 91%;
-}
-
-.pokemon-scroll {
-  position: absolute;
-  left: 0px;
-  right: 0;
-  margin: 3.8% auto;
-  width: 98%;
-  height: 82vh;
+  margin-right: 90px;
+  margin-left: 90px;
+  height: 80vh; /* HEIGHT NEEDS BREAKPOINTS */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: 40vh;
@@ -22,14 +16,16 @@
   overflow: scroll;
   overflow-x: hidden;
 }
-.pokemon-scroll::-webkit-scrollbar {
+
+.home-container::-webkit-scrollbar {
   width: 10px;
 }
-.pokemon-scroll::-webkit-scrollbar-thumb {
+
+.home-container::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.116);
 }
 
-.pokemon-scroll::-webkit-scrollbar-corner {
+.home-container::-webkit-scrollbar-corner {
   visibility: hidden;
 }
 
@@ -40,7 +36,7 @@
   font-size: 4vh;
   letter-spacing: 4px;
   font-weight: 400;
-  margin-top: 5vh;
+  margin-top: 9vh;
   margin-left: 6%;
   text-align: left;
 }
@@ -52,14 +48,14 @@
   font-size: 1rem;
   letter-spacing: 4px;
   font-weight: 400;
-  margin-top: 10vh;
+  margin-top: 13vh;
   margin-left: 6%;
   text-align: left;
 }
 
 .pokemon {
   display: flex;
-  margin-top: 11vh;
+  margin-top: 15vh;
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;

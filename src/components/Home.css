@@ -12,9 +12,9 @@
   position: absolute;
   left: 0px;
   right: 0;
-  margin: 85px auto;
+  margin: 3.8% auto;
   width: 98%;
-  height: 80vh;
+  height: 82vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: 40vh;

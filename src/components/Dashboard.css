@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 91.6%;
+  width: 91%;
   height: auto;
   overflow: scroll;
 }
@@ -191,8 +191,8 @@
 .Stat-Page {
   position: relative;
   border-top: 1px solid rgba(255, 255, 255, 0.404);
-  top: 800px;
-  height: 83vh;
+  top: 80vh;
+  height: 59vh;
 }
 
 .Stat-Page p {

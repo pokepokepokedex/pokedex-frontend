@@ -1,6 +1,5 @@
 .Nav {
   position: absolute;
-
   pointer-events: none;
   user-select: none;
   z-index: 500;
@@ -18,11 +17,12 @@
 .title {
   z-index: inherit;
   position: absolute;
+  position: fixed;
   color: white;
   letter-spacing: 8px;
   text-transform: uppercase;
   font-weight: 400;
-  top: 900px;
+  bottom: 0;
 }
 
 .pokemon-logo {
@@ -38,7 +38,7 @@
   color: white;
   margin: 0px 50px;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   letter-spacing: 2px;
   transition: 0.2s ease-in-out;
   pointer-events: all;

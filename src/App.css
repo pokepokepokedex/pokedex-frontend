@@ -49,6 +49,8 @@
 
 .dotted-grid {
   background-image: url('./assets/dotted_grid.svg');
+  background-repeat: repeat;
+  background-size: 1200px;
   width: 90%;
   height: 80%;
   position: absolute;

@@ -17,6 +17,7 @@
   background-color: rgba(0, 0, 0, 0.068);
   border: 1.4px solid rgba(255, 255, 255, 0.185);
   color: white;
+  outline: none;
 }
 
 .search-container input::placeholder {

@@ -24,13 +24,20 @@ const Nav = () => {
       >
         Home
       </NavLink>
-      <NavLink to='/dashboard' className='links' activeClassName='is-active'>
-        Dashboard
-      </NavLink>
-      <NavLink to='/backpack' className='links' activeClassName='is-active'>
-        Backpack
-      </NavLink>
-
+      {token ? (
+        <>
+          <NavLink
+            to='/dashboard'
+            className='links'
+            activeClassName='is-active'
+          >
+            Dashboard
+          </NavLink>
+          <NavLink to='/backpack' className='links' activeClassName='is-active'>
+            Backpack
+          </NavLink>
+        </>
+      ) : null}
       <Link to='/' onClick={bye} className='links' activeClassName='is-active'>
         {token ? 'Sign Out' : 'Sign In'}
       </Link>

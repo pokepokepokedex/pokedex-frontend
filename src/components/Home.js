@@ -27,9 +27,10 @@ class Home extends Component {
     event.preventDefault();
   };
 
-  async componentDidMount() {
-    try {
-      return await axios
+  componentDidMount() {
+    let token = localStorage.getItem('token');
+    if (token) {
+      axios
         .get('https://pokepokepokedex.herokuapp.com/api/pokemon/all', {
           headers: {
             'Content-Type': 'application/json',
@@ -37,14 +38,14 @@ class Home extends Component {
           }
         })
         .then(res => {
-          console.log(res);
           this.setState({
             searchArray: res.data,
             typeArray: res.data
           });
-        });
-    } catch (error) {
-      console.log(error);
+        })
+        .catch(err => err);
+    } else {
+      this.props.history.push('/');
     }
   }
 

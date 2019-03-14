@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-import axios from "axios";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
-import Search from "./Search";
+import Search from './Search';
 
-import "./Home.css";
-import Pokemon from "./Pokemon";
+import './Home.css';
+import Pokemon from './Pokemon';
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: "",
+      search: '',
       searchArray: [],
-      type: "",
+      type: '',
       typeArray: []
     };
   }
@@ -30,9 +30,9 @@ class Home extends Component {
   async componentDidMount() {
     try {
       return await axios
-        .get("https://pokepokepokedex.herokuapp.com/api/pokemon/all", {
+        .get('https://pokepokepokedex.herokuapp.com/api/pokemon/all', {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
             Authorization: window.localStorage.token
           }
         })
@@ -50,12 +50,12 @@ class Home extends Component {
 
   choosePokemon = () => {
     let pokemon = [];
-    if (this.state.search !== "") {
+    if (this.state.search !== '') {
       pokemon = this.state.searchArray;
       pokemon = pokemon.filter(poke =>
         poke.name.toUpperCase().includes(this.state.search.toUpperCase())
       );
-      console.log(pokemon, "poke");
+      console.log(pokemon, 'poke');
       return pokemon;
     } else {
       pokemon = this.state.searchArray;
@@ -65,19 +65,19 @@ class Home extends Component {
 
   addDefaultSrc(ev) {
     ev.target.src =
-      "  https://img.rankedboost.com/wp-content/uploads/2016/07/PokeBall.png";
+      'https://img.rankedboost.com/wp-content/uploads/2017/05/Pokeball-Pokemon-Go.png';
   }
 
   render() {
     const pageChange = this.props.pageChange;
     let pokemon = this.choosePokemon();
     pokemon = pokemon.filter(poke =>
-      this.state.type === "" ? poke : poke.type1.includes(this.state.type)
+      this.state.type === '' ? poke : poke.type1.includes(this.state.type)
     );
 
     return (
       <>
-        <div className="home-container">
+        <div className='home-container'>
           <Search
             submitSearch={this.submitSearch}
             searchHandler={this.searchHandler}
@@ -95,16 +95,16 @@ class Home extends Component {
         </div>
         <img
           src={require(`../assets/chevrons-left.svg`)}
-          alt="prev"
-          className={this.props.pageNumber === 1 ? "prev disabled" : "prev"}
-          name="prev"
+          alt='prev'
+          className={this.props.pageNumber === 1 ? 'prev disabled' : 'prev'}
+          name='prev'
           onClick={pageChange}
         />
         <img
           src={require(`../assets/chevrons-right.svg`)}
-          alt="next"
-          className="next"
-          name="next"
+          alt='next'
+          className='next'
+          name='next'
           onClick={pageChange}
         />
       </>

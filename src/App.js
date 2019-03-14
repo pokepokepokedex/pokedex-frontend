@@ -9,8 +9,6 @@ import axios from 'axios';
 import './App.css';
 import Backpack from './components/Backpack';
 
-console.log('hi');
-
 class App extends Component {
   state = {
     pokemon: [],
@@ -19,7 +17,6 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    console.log(this.state.pageNumber);
     if (localStorage.getItem('token')) {
       axios
         .get(
@@ -89,7 +86,7 @@ class App extends Component {
 
   addDefaultSrc(ev) {
     ev.target.src =
-      '  https://img.rankedboost.com/wp-content/uploads/2016/07/PokeBall.png';
+      'https://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1552582092/PokeBall.gif';
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Progress } from 'react-sweet-progress';
+// import { Image, Transformation } from 'cloudinary-react';
 import Plot from 'react-plotly.js';
 import 'react-sweet-progress/lib/style.css';
 import axios from 'axios';
@@ -155,7 +156,7 @@ class Dashboard extends Component {
           break;
         case 'water':
           {
-            tableResult = 'https://i.ibb.co/hZLKDQW/Turtable-beach.png';
+            tableResult = 'https://i.ibb.co/Y24KNd5/Turtable-beach.png';
           }
           break;
         case 'normal':
@@ -195,7 +196,7 @@ class Dashboard extends Component {
           break;
         case 'psychic':
           {
-            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+            tableResult = 'https://i.ibb.co/nzMhTnr/Turtable-dark.png';
           }
           break;
         case 'rock':
@@ -210,7 +211,7 @@ class Dashboard extends Component {
           break;
         case 'ghost':
           {
-            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+            tableResult = 'https://i.ibb.co/nzMhTnr/Turtable-dark.png';
           }
           break;
         case 'ice':
@@ -225,12 +226,12 @@ class Dashboard extends Component {
           break;
         case 'dark':
           {
-            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+            tableResult = 'https://i.ibb.co/nzMhTnr/Turtable-dark.png';
           }
           break;
         case 'flying':
           {
-            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+            tableResult = 'https://i.ibb.co/CHWTLvq/Turtable-sky.png';
           }
           break;
         case 'steel': {
@@ -252,8 +253,17 @@ class Dashboard extends Component {
           className='scroll-down'
         />
         <div className='pokemon-model'>
+          {/* <Image
+            cloudName='kingmuze'
+            publicId={'/Pokemon_Gifs/' + `${pokemon.name}.gif`}
+            alt='pokemon'
+            className='pokemon-dash'
+            onError={this.props.addDefaultSrc}
+          >
+            <Transformation flags='lossy' />
+          </Image> */}
           <img
-            src={`https://res.cloudinary.com/kingmuze/image/upload/v1552280621/Pokemon_Gifs/${
+            src={`http://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1/Pokemon_Gifs/${
               pokemon.name
             }.gif`}
             alt='pokemon'

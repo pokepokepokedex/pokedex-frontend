@@ -12,13 +12,19 @@ class Home extends Component {
     super(props);
     this.state = {
       search: '',
-      searchArray: []
+      searchArray: [],
+      type: '',
+      typeArray: []
     };
   }
 
-  searchHandler = e => {
-    e.preventDefault();
-    this.setState({ search: e.target.value });
+  searchHandler = event => {
+    console.log(event.target.value);
+    event.preventDefault();
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  submitHandler = event => {
+    event.preventDefault();
   };
 
   async componentDidMount() {
@@ -33,7 +39,8 @@ class Home extends Component {
         .then(res => {
           console.log(res);
           this.setState({
-            searchArray: res.data
+            searchArray: res.data,
+            typeArray: res.data
           });
         });
     } catch (error) {
@@ -45,8 +52,20 @@ class Home extends Component {
     let pokemon = [];
     if (this.state.search !== '') {
       pokemon = this.state.searchArray;
-      console.log(pokemon);
-      pokemon = pokemon.filter(poke => poke.name.includes(this.state.search));
+      pokemon = pokemon.filter(poke =>
+        poke.name.toUpperCase().includes(this.state.search.toUpperCase())
+      );
+      return pokemon;
+    } else {
+      pokemon = this.props.pokemon;
+      return pokemon;
+    }
+  };
+  chooseType = () => {
+    let pokemon = [];
+    if (this.state.type !== '') {
+      pokemon = this.state.typeArray;
+      pokemon = pokemon.filter(poke => poke.type1.includes(this.state.type));
       return pokemon;
     } else {
       pokemon = this.props.pokemon;
@@ -56,13 +75,21 @@ class Home extends Component {
 
   addDefaultSrc(ev) {
     ev.target.src =
-      '  https://img.rankedboost.com/wp-content/uploads/2016/07/PokeBall.png';
+      'https://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1552582092/PokeBall.gif';
   }
-
   render() {
     const pageChange = this.props.pageChange;
-    // const pokemon = this.props.pokemon;
     let pokemon = this.choosePokemon();
+    let type = this.chooseType();
+    pokemon = pokemon.filter(poke =>
+      this.state.type === '' ? poke : poke.type1.includes(this.state.type)
+    );
+    type = type.filter(poke =>
+      this.state.search === ''
+        ? poke
+        : poke.name.toUpperCase().includes(this.state.search.toUpperCase())
+    );
+
     return (
       <>
         <div className='home-container'>
@@ -70,15 +97,24 @@ class Home extends Component {
             submitSearch={this.submitSearch}
             searchHandler={this.searchHandler}
             search={this.state.search}
+            type={this.state.type}
+            submitHandler={this.submitHandler}
           />
-          {pokemon &&
-            pokemon.map(poke => (
-              <div key={poke.id}>
-                <NavLink to={`/dashboard/${poke.id}`}>
-                  <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
-                </NavLink>
-              </div>
-            ))}
+          {this.state.search === ''
+            ? type.map(poke => (
+                <div key={poke.id}>
+                  <NavLink to={`/dashboard/${poke.id}`}>
+                    <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
+                  </NavLink>
+                </div>
+              ))
+            : pokemon.map(poke => (
+                <div key={poke.id}>
+                  <NavLink to={`/dashboard/${poke.id}`}>
+                    <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
+                  </NavLink>
+                </div>
+              ))}
         </div>
         <img
           src={require(`../assets/chevrons-left.svg`)}

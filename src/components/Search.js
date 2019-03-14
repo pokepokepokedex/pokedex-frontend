@@ -9,12 +9,21 @@ class Search extends Component {
   render() {
     return (
       <div className="search-container">
-        <form>
+        <form onSubmit={this.props.submitHandler}>
           <input
-            placeholder="search"
+            placeholder="search pokemon"
             type="text"
             name="search"
             value={this.props.search}
+            onChange={this.props.searchHandler}
+          />
+        </form>
+        <form onSubmit={this.props.submitHandler}>
+          <input
+            placeholder="search pokemon type"
+            type="text"
+            name="type"
+            value={this.props.type}
             onChange={this.props.searchHandler}
           />
         </form>

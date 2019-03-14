@@ -55,7 +55,17 @@ class Home extends Component {
       pokemon = pokemon.filter(poke =>
         poke.name.toUpperCase().includes(this.state.search.toUpperCase())
       );
-      console.log(pokemon, "poke");
+      return pokemon;
+    } else {
+      pokemon = this.props.pokemon;
+      return pokemon;
+    }
+  };
+  chooseType = () => {
+    let pokemon = [];
+    if (this.state.type !== "") {
+      pokemon = this.state.typeArray;
+      pokemon = pokemon.filter(poke => poke.type1.includes(this.state.type));
       return pokemon;
     } else {
       pokemon = this.props.pokemon;
@@ -67,12 +77,17 @@ class Home extends Component {
     ev.target.src =
       "  https://img.rankedboost.com/wp-content/uploads/2016/07/PokeBall.png";
   }
-
   render() {
     const pageChange = this.props.pageChange;
     let pokemon = this.choosePokemon();
+    let type = this.chooseType();
     pokemon = pokemon.filter(poke =>
       this.state.type === "" ? poke : poke.type1.includes(this.state.type)
+    );
+    type = type.filter(poke =>
+      this.state.search === ""
+        ? poke
+        : poke.name.toUpperCase().includes(this.state.search.toUpperCase())
     );
 
     return (
@@ -85,13 +100,21 @@ class Home extends Component {
             type={this.state.type}
             submitHandler={this.submitHandler}
           />
-          {pokemon.map(poke => (
-            <div key={poke.id}>
-              <NavLink to={`/dashboard/${poke.id}`}>
-                <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
-              </NavLink>
-            </div>
-          ))}
+          {this.state.search === ""
+            ? type.map(poke => (
+                <div key={poke.id}>
+                  <NavLink to={`/dashboard/${poke.id}`}>
+                    <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
+                  </NavLink>
+                </div>
+              ))
+            : pokemon.map(poke => (
+                <div key={poke.id}>
+                  <NavLink to={`/dashboard/${poke.id}`}>
+                    <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
+                  </NavLink>
+                </div>
+              ))}
         </div>
         <img
           src={require(`../assets/chevrons-left.svg`)}

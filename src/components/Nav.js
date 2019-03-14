@@ -31,7 +31,9 @@ const Nav = () => {
       <NavLink to="/backpack" className="links" activeClassName="is-active">
         Backpack
       </NavLink>
-      <Link onClick={bye} to="/" className="links" activeClassName="is-active">
+
+      <NavLink to='/login' className='links' activeClassName='is-active'>
+
         Sign Out
       </Link>
     </div>

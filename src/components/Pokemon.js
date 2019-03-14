@@ -1,18 +1,37 @@
 import React from 'react';
+// import { Image, Transformation } from 'cloudinary-react';
 
-const Pokemon = ({ poke }) => {
+const Pokemon = ({ poke, addDefaultSrc }) => {
   return (
-    <div className='pokemon'>
-      <span className='poke-frame' />
+    <>
       <h1 className='pokemon-name'>{poke.name}</h1>
-      <img
-        src={`https://res.cloudinary.com/kingmuze/image/upload/v1/Pokemon_Gifs/${
-          poke.name
-        }.gif`}
-        alt='pokemon'
+      <h6 className='pokemon-type'>
+        {' '}
+        Type: {poke.type1} {poke.type2}{' '}
+      </h6>
+      <div className='pokemon'>
+        <img
+          src={require(`../assets/pokemon_frame.svg`)}
+          className='poke-frame'
+        />
+        {/* <Image
+        cloudName='kingmuze'
+        publicId={'/Pokemon_Gifs/' + `${poke.name}.gif`}
         className='home-pokemon'
-      />
-    </div>
+        onError={addDefaultSrc}
+      >
+        <Transformation flags='lossy' />
+      </Image> */}
+        <img
+          src={`http://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1/Pokemon_Gifs/${
+            poke.name
+          }.gif`}
+          alt='pokemon'
+          className='home-pokemon'
+          onError={addDefaultSrc}
+        />
+      </div>
+    </>
   );
 };
 

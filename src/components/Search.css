@@ -1,4 +1,26 @@
 .search-container {
-  border: 5px solid white;
-  display: block;
+  position: absolute;
+  width: 93%;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-container input {
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 6px;
+  background-color: rgba(85, 85, 85, 0.068);
+  border: 1.4px solid rgba(128, 128, 128, 0.493);
+  color: white;
+}
+
+.search-container input::placeholder {
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  opacity: 0.2;
 }

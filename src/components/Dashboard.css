@@ -34,9 +34,9 @@
 
 .pokemon-title-tag {
   margin-top: 20px;
-  margin-left: 20px;
+  margin-left: 4.5vh;
   padding-bottom: 20px;
-  width: 30%;
+  width: 50vh;
   height: auto;
 
   background-color: rgba(77, 77, 77, 0.199);
@@ -70,7 +70,7 @@
 }
 
 .stat-container {
-  width: 400px;
+  width: 50vh;
   display: flex;
 }
 
@@ -82,22 +82,23 @@
 }
 
 .stats {
+  width: auto;
+  height: 25vh;
   text-align: right;
   line-height: 15px;
   color: white;
   position: absolute;
-  top: 54vh;
-  left: 50px;
-  font-size: 1.5rem;
+  top: 50vh;
+  font-size: 2vh;
 }
 
 .pokemon-dash {
   position: absolute;
   z-index: 150;
   width: auto;
-  height: 320px;
-  max-height: 400px;
-  top: 120px;
+  height: 35vh;
+  max-height: 35vh;
+  top: 12vh;
   right: 0;
   left: 0;
   margin: 0 auto;
@@ -106,13 +107,13 @@
 .turntable {
   position: absolute;
   z-index: 100;
-  top: 340px;
-  padding-right: 60px;
+  top: 33vh;
+  padding-right: 30px;
   right: 0;
   left: 0;
   margin: 0 auto;
   width: auto;
-  height: 400px;
+  height: 45vh;
 }
 
 .pokeball-logo {
@@ -126,7 +127,7 @@
   animation: logorotate infinite 60s linear;
   animation-direction: normal;
   width: auto;
-  height: 560px;
+  height: 60vh;
   filter: drop-shadow(0px 0px 10px initial);
 }
 
@@ -142,9 +143,8 @@
 .pokemon-details {
   border-top: 5px solid;
   position: absolute;
-  right: 20px;
-  top: 600px;
-  margin-left: 20px;
+  right: 2vh;
+  top: 55vh;
   height: 150px;
   min-height: 120px;
   width: 30%;
@@ -159,7 +159,7 @@
 .pokemon-details p {
   margin: 0;
   width: 90%;
-  font-size: 1.4rem;
+  font-size: 2.2vh;
   padding-left: 20px;
   letter-spacing: 2px;
   color: white;
@@ -169,15 +169,16 @@
   position: absolute;
   color: white;
   top: 125px;
-  height: 50px;
-  left: 300px;
-  width: 200px;
+  height: 5vh;
+  left: 45%;
+  width: 25vh;
   border: 3px solid;
   background-color: rgba(255, 255, 255, 0);
   padding: 10px;
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 400;
+  font-size: 1.4vh;
 }
 
 .add-pokemon:hover {

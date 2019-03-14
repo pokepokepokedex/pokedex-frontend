@@ -6,7 +6,6 @@ import './Nav.css';
 const Nav = () => {
   const bye = () => {
     localStorage.clear();
-    window.reload();
   };
 
   return (
@@ -32,7 +31,7 @@ const Nav = () => {
         Backpack
       </NavLink>
 
-      <Link to='/' className='links' activeClassName='is-active' onClick={bye}>
+      <Link to='/' onClick={bye} className='links' activeClassName='is-active'>
         Sign Out
       </Link>
     </div>

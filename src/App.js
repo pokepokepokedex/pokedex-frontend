@@ -9,13 +9,13 @@ import axios from "axios";
 import "./App.css";
 import Backpack from "./components/Backpack";
 
-console.log("hi");
-
 class App extends Component {
   state = {
     pokemon: [],
     pageNumber: 1,
-    pokemonIDS: []
+    pokemonIDS: [],
+    backpackPokemon: [],
+    userInfo: []
   };
 
   componentDidMount = () => {
@@ -87,6 +87,28 @@ class App extends Component {
     }
   };
 
+  addToBackpack = id => {
+    this.setState(prevState => ({
+      backpackPokemon: [...prevState.backpackPokemon, id]
+    }));
+
+    axios
+      .post(
+        `https://pokepokepokedex.herokuapp.com/api/user/${
+          window.localStorage.id
+        }`,
+        this.state.backpackPokemon,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: window.localStorage.token
+          }
+        }
+      )
+      .then(res => this.setState({ backpackPokemon: res.data.backpack }))
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <>
@@ -106,11 +128,20 @@ class App extends Component {
         <Route
           path="/dashboard/:id"
           render={props => (
-            <Dashboard {...props} pokemon={this.state.pokemon} />
+            <Dashboard
+              {...props}
+              pokemon={this.state.pokemon}
+              addToBackpack={this.addToBackpack}
+            />
           )}
         />
 
-        <Route path="/backpack" component={Backpack} />
+        <Route
+          path="/backpack"
+          render={props => (
+            <Backpack {...props} backpackPokemon={this.state.backpackPokemon} />
+          )}
+        />
         <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
         <div className="bg-elements">

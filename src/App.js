@@ -86,7 +86,7 @@ class App extends Component {
 
   addDefaultSrc(ev) {
     ev.target.src =
-      'https://orig00.deviantart.net/0639/f/2011/134/6/5/pokemon_pokeball_pichu_by_kevintut-d3gallt.gif';
+      'https://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1552582092/PokeBall.gif';
   }
 
   render() {

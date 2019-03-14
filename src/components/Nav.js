@@ -26,7 +26,7 @@ const Nav = () => {
       <NavLink to='/backpack' className='links' activeClassName='is-active'>
         Backpack
       </NavLink>
-      <NavLink to='/about' className='links' activeClassName='is-active'>
+      <NavLink to='/login' className='links' activeClassName='is-active'>
         Sign Out
       </NavLink>
     </div>

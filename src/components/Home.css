@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: 40vh;
-  grid-column-gap: 10px;
+  grid-column-gap: 1vh;
   overflow: scroll;
 }
 
@@ -29,7 +29,7 @@
 .pokemon-name {
   text-transform: uppercase;
   position: absolute;
-  color: rgba(255, 255, 255, 0.884);
+  color: rgba(255, 255, 255, 0.877);
   font-size: 2rem;
   letter-spacing: 4px;
   font-weight: 400;

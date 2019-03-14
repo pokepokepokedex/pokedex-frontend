@@ -155,7 +155,7 @@ class Dashboard extends Component {
           break;
         case 'water':
           {
-            tableResult = 'https://i.ibb.co/hZLKDQW/Turtable-beach.png';
+            tableResult = 'https://i.ibb.co/Y24KNd5/Turtable-beach.png';
           }
           break;
         case 'normal':
@@ -195,7 +195,7 @@ class Dashboard extends Component {
           break;
         case 'psychic':
           {
-            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+            tableResult = 'https://i.ibb.co/nzMhTnr/Turtable-dark.png';
           }
           break;
         case 'rock':
@@ -210,7 +210,7 @@ class Dashboard extends Component {
           break;
         case 'ghost':
           {
-            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+            tableResult = 'https://i.ibb.co/nzMhTnr/Turtable-dark.png';
           }
           break;
         case 'ice':
@@ -225,12 +225,12 @@ class Dashboard extends Component {
           break;
         case 'dark':
           {
-            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+            tableResult = 'https://i.ibb.co/nzMhTnr/Turtable-dark.png';
           }
           break;
         case 'flying':
           {
-            tableResult = 'https://i.ibb.co/FsYbFB7/Turtable.png';
+            tableResult = 'https://i.ibb.co/CHWTLvq/Turtable-sky.png';
           }
           break;
         case 'steel': {

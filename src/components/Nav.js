@@ -6,7 +6,6 @@ import "./Nav.css";
 const Nav = () => {
   const bye = () => {
     localStorage.clear();
-    window.reload();
   };
 
   return (

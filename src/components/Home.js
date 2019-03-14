@@ -48,27 +48,17 @@ class Home extends Component {
     }
   }
 
-  chooseType = () => {
-    let pokemon = [];
-    if (this.state.type !== "") {
-      pokemon = this.state.typeArray;
-      pokemon = pokemon.filter(poke => poke.type1.includes(this.state.type));
-      return pokemon;
-    } else {
-      pokemon = this.props.pokemon;
-      return pokemon;
-    }
-  };
-
   choosePokemon = () => {
     let pokemon = [];
     if (this.state.search !== "") {
       pokemon = this.state.searchArray;
-      pokemon = pokemon.filter(poke => poke.name.includes(this.state.search));
+      pokemon = pokemon.filter(poke =>
+        poke.name.toUpperCase().includes(this.state.search.toUpperCase())
+      );
       console.log(pokemon, "poke");
       return pokemon;
     } else {
-      pokemon = this.props.pokemon;
+      pokemon = this.state.searchArray;
       return pokemon;
     }
   };
@@ -81,7 +71,6 @@ class Home extends Component {
   render() {
     const pageChange = this.props.pageChange;
     let pokemon = this.choosePokemon();
-    let type = this.chooseType();
     pokemon = pokemon.filter(poke =>
       this.state.type === "" ? poke : poke.type1.includes(this.state.type)
     );
@@ -96,15 +85,13 @@ class Home extends Component {
             type={this.state.type}
             submitHandler={this.submitHandler}
           />
-          {pokemon || type
-            ? pokemon.map(poke => (
-                <div key={poke.id}>
-                  <NavLink to={`/dashboard/${poke.id}`}>
-                    <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
-                  </NavLink>
-                </div>
-              ))
-            : null}
+          {pokemon.map(poke => (
+            <div key={poke.id}>
+              <NavLink to={`/dashboard/${poke.id}`}>
+                <Pokemon poke={poke} addDefaultSrc={this.addDefaultSrc} />
+              </NavLink>
+            </div>
+          ))}
         </div>
         <img
           src={require(`../assets/chevrons-left.svg`)}

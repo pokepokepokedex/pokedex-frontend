@@ -673,7 +673,15 @@ class Dashboard extends Component {
           </div>
 
           <Link
-            onClick={() => this.props.addToBackpack(this.props.match.params.id)}
+            onClick={() =>
+              this.props.addToBackpack({
+                type1: pokemon.type1,
+                type2: pokemon.type2,
+                name: pokemon.name,
+                pokedex_number: pokemon.pokedex_number,
+                users_id: window.localStorage.id
+              })
+            }
             to="/backpack"
           >
             <button

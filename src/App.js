@@ -86,26 +86,24 @@ class App extends Component {
     }
   };
 
-  addToBackpack = id => {
-    this.setState(prevState => ({
-      backpackPokemon: [...prevState.backpackPokemon, id]
-    }));
-
+  addToBackpack = body => {
+    // this.setState(prevState => ({
+    //   backpackPokemon: [...prevState.backpackPokemon, id]
+    // }));
+    console.log(window.localStorage.id);
     axios
-      .post(
-        `https://pokepokepokedex.herokuapp.com/api/user/${
-          window.localStorage.id
-        }`,
-        this.state.backpackPokemon,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: window.localStorage.token
-          }
+      .post(`https://pokepokepokedex.herokuapp.com/api/backpack`, body, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: window.localStorage.token
         }
-      )
-      .then(res => this.setState({ backpackPokemon: res.data.backpack }))
+      })
+      .then(res => {
+        this.setState({ backpackPokemon: res });
+        console.log(res);
+      })
       .catch(err => console.log(err));
+    console.log(this.state.backpackPokemon);
   };
 
   render() {

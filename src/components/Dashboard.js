@@ -492,8 +492,9 @@ class Dashboard extends Component {
           />
           <div className='bell-stat-flex'>
             <img
-              src={require(`../assets/bellcurve_pngs/${pokemon.name}` +
-                '_gaussian2.png')}
+              src={require(`../assets/bellcurve_pngs/${
+                pokemon.name
+              }_gaussian2.png`)}
               alt='pokemon-stat'
               className='bell-stat'
             />
@@ -506,7 +507,6 @@ class Dashboard extends Component {
               <p>SPEED</p>
             </div>
           </div>
-          _gaussian2.png
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='552'

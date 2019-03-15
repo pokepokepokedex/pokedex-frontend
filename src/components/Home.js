@@ -76,7 +76,7 @@ class Home extends Component {
 
   addDefaultSrc(ev) {
     ev.target.src =
-      'https://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1552582092/PokeBall.gif';
+      'https://res.cloudinary.com/kingmuze/image/upload/v1552582092/PokeBall.gif';
   }
   render() {
     const pageChange = this.props.pageChange;

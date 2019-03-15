@@ -2,12 +2,11 @@
   position: absolute;
   z-index: 108;
   top: 90px;
-  max-height: 825px;
   left: 0;
   right: 0;
   margin: 0 auto;
   width: 91%;
-  height: auto;
+  height: 84.2vh;
   overflow: scroll;
 }
 
@@ -92,6 +91,17 @@
   font-size: 2vh;
 }
 
+@media (max-width: 1024px) {
+  .stat-container {
+    width: 42vh;
+  }
+
+  .stats {
+    width: 40vh;
+    z-index: 200;
+  }
+}
+
 .pokemon-dash {
   position: absolute;
   z-index: 150;
@@ -165,6 +175,48 @@
   color: white;
 }
 
+@media (max-width: 1024px) {
+  .pokemon-details {
+    right: 5vh;
+    width: 50%;
+    z-index: 200;
+  }
+
+  .detail-container {
+    width: 40vh;
+    z-index: 200;
+  }
+
+  .pokeball-logo {
+    height: 50vh;
+  }
+}
+
+.bell-stat-flex {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: auto;
+  height: 30vh;
+}
+
+.bell-stat {
+  width: auto;
+  height: 29vh;
+}
+
+.bell-stat-list {
+  position: absolute;
+  margin-top: 15px;
+  line-height: 20px;
+  right: 38vh;
+  font-size: 1.7vh;
+  color: white;
+  text-align: right;
+}
+
 .add-pokemon {
   position: absolute;
   color: white;
@@ -190,15 +242,15 @@
 
 .Stat-Page {
   position: relative;
-  border-top: 1px solid rgba(255, 255, 255, 0.404);
+  border-top: 1.2px solid;
   top: 80vh;
-  height: 59vh;
+  height: 80vh;
 }
 
 .Stat-Page p {
   text-transform: uppercase;
   color: white;
   font-size: 5rem;
-  margin: 0;
+  margin: 20px;
   text-align: center;
 }

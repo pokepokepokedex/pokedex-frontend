@@ -95,7 +95,7 @@ class App extends Component {
     // this.setState(prevState => ({
     //   backpackPokemon: [...prevState.backpackPokemon, id]
     // }));
-    console.log(window.localStorage.id);
+    console.log(body);
     axios
       .post(`https://pokepokepokedex.herokuapp.com/api/backpack`, body, {
         headers: {
@@ -136,6 +136,13 @@ class App extends Component {
               addToBackpack={this.addToBackpack}
               addDefaultSrc={this.addDefaultSrc}
             />
+          )}
+        />
+        <Route
+          exact
+          path="/dashboard"
+          render={props => (
+            <Dashboard {...props} randomPokemon={this.state.pokemon} />
           )}
         />
 

@@ -16,15 +16,12 @@
   overflow: scroll;
   overflow-x: hidden;
 }
-
 .backpack-container::-webkit-scrollbar {
   width: 10px;
 }
-
 .backpack-container::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.116);
 }
-
 .backpack-container::-webkit-scrollbar-corner {
   visibility: hidden;
 }

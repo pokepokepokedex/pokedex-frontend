@@ -90,7 +90,7 @@ class App extends Component {
     // this.setState(prevState => ({
     //   backpackPokemon: [...prevState.backpackPokemon, id]
     // }));
-    console.log(window.localStorage.id);
+    console.log(body);
     axios
       .post(`https://pokepokepokedex.herokuapp.com/api/backpack`, body, {
         headers: {

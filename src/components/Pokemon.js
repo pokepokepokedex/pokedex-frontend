@@ -15,14 +15,6 @@ const Pokemon = ({ poke, addDefaultSrc }) => {
           className="poke-frame"
           alt=""
         />
-        {/* <Image
-        cloudName='kingmuze'
-        publicId={'/Pokemon_Gifs/' + `${poke.name}.gif`}
-        className='home-pokemon'
-        onError={addDefaultSrc}
-      >
-        <Transformation flags='lossy' />
-      </Image> */}
         <img
           src={`http://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1/Pokemon_Gifs/${
             poke.name

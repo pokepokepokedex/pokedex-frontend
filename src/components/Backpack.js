@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import "./Backpack.css";
-import { NavLink } from "react-router-dom";
-import Pokemon from "./Pokemon";
-import axios from "axios";
+import React, { Component } from 'react';
+import './Backpack.css';
+import { NavLink } from 'react-router-dom';
+import Pokemon from './Pokemon';
+import axios from 'axios';
+import BackpackPokemon from './BackpackPokemon';
 
 class Backpack extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Backpack extends Component {
         }`,
         {
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
             Authorization: window.localStorage.token
           }
         }
@@ -34,12 +35,12 @@ class Backpack extends Component {
   render() {
     let pokemon = this.state.pokemon;
     return (
-      <div className="backpack-container">
+      <div className='backpack-container'>
         {pokemon &&
           pokemon.map(poke => (
             <div key={poke.id}>
               <NavLink to={`/dashboard/${poke.pokedex_number}`}>
-                <Pokemon poke={poke} />
+                <BackpackPokemon poke={poke} />
               </NavLink>
             </div>
           ))}

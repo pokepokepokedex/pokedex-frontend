@@ -686,14 +686,12 @@ class Dashboard extends Component {
           }}
         >
           <p> {pokemon.name} STATS</p>
-          <iframe
-            src="https://plot.ly/~phantasm320/294/bars/#/"
-            width="1200px"
-            height="1300px"
-            frameBorder="0"
-            sandbox
-            name="pokemon stats"
-            title="interactive graph"
+
+          <img
+            src={require(`../assets/bar_pngs/${pokemon.name}_bar1.png`)}
+            alt='pokemon-stat'
+            className='graph-stat'
+
           />
         </div>
       </div>

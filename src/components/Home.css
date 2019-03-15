@@ -10,7 +10,7 @@
   margin-left: 90px;
   height: 80vh; /* HEIGHT NEEDS BREAKPOINTS */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(36vh, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(38vh, 1fr));
   grid-auto-rows: 40vh;
   grid-column-gap: 1vh;
   overflow: scroll;

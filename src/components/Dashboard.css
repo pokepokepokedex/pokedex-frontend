@@ -192,6 +192,31 @@
   }
 }
 
+.bell-stat-flex {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: auto;
+  height: 30vh;
+}
+
+.bell-stat {
+  width: auto;
+  height: 29vh;
+}
+
+.bell-stat-list {
+  position: absolute;
+  margin-top: 15px;
+  line-height: 20px;
+  right: 38vh;
+  font-size: 1.7vh;
+  color: white;
+  text-align: right;
+}
+
 .add-pokemon {
   position: absolute;
   color: white;

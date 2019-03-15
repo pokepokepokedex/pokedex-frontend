@@ -260,13 +260,29 @@ class Dashboard extends Component {
             className='pokemon-dash'
             onError={this.props.addDefaultSrc}
           />
-
           <img
             src={table(pokemon.type1)}
             alt='turntable'
             className='turntable'
           />
-
+          <div className='bell-stat-flex'>
+            <img
+              src={require(`../assets/bellcurve_pngs/${
+                pokemon.name
+              }_gaussian2.png`)}
+              alt='pokemon-stat'
+              className='bell-stat'
+            />
+            <div className='bell-stat-list'>
+              <p>HP</p>
+              <p>ATTACK</p>
+              <p>DEFENSE</p>
+              <p>SP_ATTACK</p>
+              <p>SO_DEFENSE</p>
+              <p>SPEED</p>
+            </div>
+          </div>
+          _gaussian2.png
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='552'
@@ -448,7 +464,15 @@ class Dashboard extends Component {
           </div>
 
           <Link
-            onClick={() => this.props.addToBackpack(this.props.match.params.id)}
+            onClick={() =>
+              this.props.addToBackpack({
+                type1: pokemon.type1,
+                type2: pokemon.type2,
+                name: pokemon.name,
+                pokedex_number: pokemon.pokedex_number,
+                users_id: window.localStorage.id
+              })
+            }
             to='/backpack'
           >
             <button
@@ -469,7 +493,7 @@ class Dashboard extends Component {
         >
           <p> {pokemon.name} STATS</p>
           <iframe
-            src='https://jav-iframes.herokuapp.com/'
+            src='https://jav-iframes.herokuapp.com/Charizard'
             width='1200px'
             height='1300px'
             frameborder='0'

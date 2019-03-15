@@ -20,7 +20,7 @@ const Nav = () => {
         exact={true}
         to='/home'
         className='links'
-        activeClassName='is-active'
+        activeclassName='is-active'
       >
         Home
       </NavLink>
@@ -29,16 +29,16 @@ const Nav = () => {
           <NavLink
             to='/dashboard'
             className='links'
-            activeClassName='is-active'
+            activeclassName='is-active'
           >
             Dashboard
           </NavLink>
-          <NavLink to='/backpack' className='links' activeClassName='is-active'>
+          <NavLink to='/backpack' className='links' activeclassName='is-active'>
             Backpack
           </NavLink>
         </>
       ) : null}
-      <Link to='/' onClick={bye} className='links' activeClassName='is-active'>
+      <Link to='/' onClick={bye} className='links' activeclassName='is-active'>
         {token ? 'Sign Out' : 'Sign In'}
       </Link>
     </div>

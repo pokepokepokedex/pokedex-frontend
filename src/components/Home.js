@@ -6,7 +6,6 @@ import Search from './Search';
 
 import './Home.css';
 import Pokemon from './Pokemon';
-import BackpackPokemon from './BackpackPokemon';
 
 class Home extends Component {
   constructor(props) {

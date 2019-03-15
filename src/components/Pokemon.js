@@ -13,6 +13,7 @@ const Pokemon = ({ poke, addDefaultSrc }) => {
         <img
           src={require(`../assets/pokemon_frame.svg`)}
           className='poke-frame'
+          alt='frame'
         />
         <img
           src={`http://res.cloudinary.com/kingmuze/image/upload/fl_lossy/v1/Pokemon_Gifs/${

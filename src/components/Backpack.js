@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Backpack.css';
 import { NavLink } from 'react-router-dom';
-import Pokemon from './Pokemon';
+
 import axios from 'axios';
 import BackpackPokemon from './BackpackPokemon';
 

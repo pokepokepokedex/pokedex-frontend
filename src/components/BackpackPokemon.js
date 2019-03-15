@@ -11,10 +11,12 @@ const BackpackPokemon = ({ poke, addDefaultSrc }) => {
           <img
             src={require(`../assets/pokedex_top.png`)}
             className='pokedex-top'
+            alt='pokedex'
           />
           <img
             src={require(`../assets/pokedex_bottom.png`)}
             className='pokedex-bottom'
+            alt='pokedex'
           />
           <span className='hologram-bg' />
         </div>

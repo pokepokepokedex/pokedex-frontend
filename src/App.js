@@ -43,7 +43,7 @@ class App extends Component {
   };
 
   pageChange = event => {
-    // debugger;
+
     if (event.target.name === "prev" && this.state.pageNumber === 1) {
       return;
     }
@@ -94,27 +94,22 @@ class App extends Component {
       "https://res.cloudinary.com/kingmuze/image/upload/v1552582092/PokeBall.gif";
   }
 
-  addToBackpack = body => {
-    console.log(body);
+
+  addToBackpack = pokemon => {
+
     axios
-      .post(`https://pokepokepokedex.herokuapp.com/api/backpack`, body, {
+      .post(`https://pokepokepokedex.herokuapp.com/api/backpack`, pokemon, {
         headers: {
           "Content-Type": "application/json",
           Authorization: window.localStorage.token
         }
       })
       .then(res => {
-        // this.setState(prevState => ({
-        //   backpackPokemon: [...prevState.backpackPokemon, res]
-        // }));
-        console.log(res);
-        this.setState({ backpackPokemon: res.data }, () =>
-          console.log("yooo", this.state.backpackPokemon)
-        );
+        this.setState({ backpackPokemon: res.data });
         this.forceUpdate();
+
       })
       .catch(err => console.log(err));
-    console.log(this.state.backpackPokemon);
   };
 
   render() {

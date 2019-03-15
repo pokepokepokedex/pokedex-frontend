@@ -27,11 +27,11 @@ class Backpack extends Component {
         }
       )
       .then(res => {
-        this.setState({ pokemon: res.data }, () =>
-          console.log(this.state.pokemon)
-        );
-        console.log(res);
+
+        this.setState({ pokemon: res.data });
+       
         this.forceUpdate();
+
       })
       .catch(err => console.log(err));
   };
@@ -43,7 +43,6 @@ class Backpack extends Component {
   render() {
     console.log(this.props.backpackPokemon);
     let pokemon = this.state.pokemon;
-    console.log(pokemon);
     return (
       <div className="backpack-container">
         {pokemon &&

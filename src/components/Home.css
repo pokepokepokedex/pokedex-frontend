@@ -23,6 +23,18 @@
   }
 }
 
+@media (max-height: 900px) {
+  .home-container {
+    height: 78vh;
+  }
+}
+
+@media (max-height: 850px) {
+  .home-container {
+    height: 74.5vh;
+  }
+}
+
 .home-container::-webkit-scrollbar {
   width: 10px;
 }

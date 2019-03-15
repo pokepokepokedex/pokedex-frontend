@@ -717,13 +717,10 @@ class Dashboard extends Component {
           }}
         >
           <p> {pokemon.name} STATS</p>
-          <iframe
-            src='https://jav-iframes.herokuapp.com/Charizard'
-            width='1200px'
-            height='1300px'
-            frameborder='0'
-            sandbox
-            name='pokemon stats'
+          <img
+            src={require(`../assets/bar_pngs/${pokemon.name}_bar1.png`)}
+            alt='pokemon-stat'
+            className='graph-stat'
           />
         </div>
       </div>

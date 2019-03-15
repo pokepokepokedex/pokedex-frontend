@@ -6,6 +6,7 @@ import Search from './Search';
 
 import './Home.css';
 import Pokemon from './Pokemon';
+import BackpackPokemon from './BackpackPokemon';
 
 class Home extends Component {
   constructor(props) {
@@ -101,7 +102,6 @@ class Home extends Component {
             type={this.state.type}
             submitHandler={this.submitHandler}
           />
-
           {this.state.search === ''
             ? type.map(poke => (
                 <div key={poke.id}>

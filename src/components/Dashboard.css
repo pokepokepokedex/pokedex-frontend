@@ -254,3 +254,8 @@
   margin: 20px;
   text-align: center;
 }
+
+.graph-stat {
+  width: auto;
+  height: 56vh;
+}

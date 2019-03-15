@@ -1,6 +1,7 @@
-# Project Title
+# pokestats
 
-One Paragraph of project description goes here
+Pokestats is a simple database where you can view pokemon and their stats. You can even save your favorite pokemon
+to your backpack so you can view them later!
 
 ## Getting Started
 

@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  top: 55%;
+  top: 52vh;
   z-index: 500;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   width: 400px;
   margin-bottom: 20px;
   padding: 10px;
-  border: 1.3px solid rgba(6, 185, 255, 0.39);
+  border: 1.3px solid rgba(6, 184, 255, 0.507);
   background-color: rgba(0, 0, 0, 0.25);
   color: white;
   outline: none;
@@ -25,16 +25,12 @@
   color: white;
 }
 
-input:-webkit-autofill {
-  background-color: rgba(255, 255, 255, 0.103);
-}
-
 .login-text {
   position: absolute;
   z-index: 800;
   text-transform: uppercase;
   width: auto;
-  margin: 100px auto;
+  margin: 10vh auto;
   text-align: center;
   left: 0;
   right: 0;
@@ -59,10 +55,34 @@ input:-webkit-autofill {
   border: 1.2px solid rgba(255, 255, 255, 0.39);
   background-color: rgba(255, 255, 255, 0.103);
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.log-in-btn:hover {
+  transition: 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.185);
+}
+
+.login-caption-flex {
+  display: flex;
+  align-items: center;
+}
+
+.login-border {
+  background-color: rgba(255, 255, 255, 0.301);
+  height: 1.5px;
+  width: 10vh;
+}
+
+.login-caption {
+  color: rgb(100, 100, 100);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .register-btn {
-  margin-top: 20px;
   color: white;
   text-transform: uppercase;
   font-family: 'Teko', sans-serif;
@@ -73,4 +93,10 @@ input:-webkit-autofill {
   border: 1.2px solid rgba(255, 255, 255, 0.39);
   background-color: rgba(255, 255, 255, 0.103);
   cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.register-btn:hover {
+  transition: 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.185);
 }

@@ -474,7 +474,6 @@ class Dashboard extends Component {
               <p>SPEED</p>
             </div>
           </div>
-          _gaussian2.png
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="552"

@@ -89,8 +89,13 @@ export default class Login extends Component {
           <button onClick={this.tryLogin} className='log-in-btn'>
             Log in
           </button>
+          <div className='login-caption-flex'>
+            <span className='login-border' />
+            <p className='login-caption'>Don't have an account yet?</p>
+            <span className='login-border' />
+          </div>
           <button onClick={this.takeToRegister} className='register-btn'>
-            Need an account?
+            Sign up
           </button>
         </form>
       </div>

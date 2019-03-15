@@ -8,6 +8,7 @@
   width: 91%;
   height: 84.2vh;
   overflow: scroll;
+  overflow-x: hidden;
 }
 
 .dashboard-container::-webkit-scrollbar {

@@ -66,7 +66,9 @@ class Home extends Component {
     let pokemon = [];
     if (this.state.type !== '') {
       pokemon = this.state.typeArray;
-      pokemon = pokemon.filter(poke => poke.type1.includes(this.state.type));
+      pokemon = pokemon.filter(poke =>
+        poke.type1.toUpperCase().includes(this.state.type.toUpperCase())
+      );
       return pokemon;
     } else {
       pokemon = this.props.pokemon;

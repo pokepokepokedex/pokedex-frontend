@@ -689,9 +689,8 @@ class Dashboard extends Component {
 
           <img
             src={require(`../assets/bar_pngs/${pokemon.name}_bar1.png`)}
-            alt='pokemon-stat'
-            className='graph-stat'
-
+            alt="pokemon-stat"
+            className="graph-stat"
           />
         </div>
       </div>

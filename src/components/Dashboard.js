@@ -687,7 +687,7 @@ class Dashboard extends Component {
         >
           <p> {pokemon.name} STATS</p>
           <iframe
-            src="https://jav-iframes.herokuapp.com/Charizard"
+            src="https://plot.ly/~phantasm320/294/bars/#/"
             width="1200px"
             height="1300px"
             frameBorder="0"

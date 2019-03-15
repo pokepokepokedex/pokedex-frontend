@@ -134,6 +134,13 @@ class App extends Component {
             />
           )}
         />
+        <Route
+          exact
+          path="/dashboard"
+          render={props => (
+            <Dashboard {...props} randomPokemon={this.state.pokemon} />
+          )}
+        />
 
         <Route
           path="/backpack"

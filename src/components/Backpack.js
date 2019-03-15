@@ -27,19 +27,31 @@ class Backpack extends Component {
         }
       )
       .then(res => {
+
         this.setState({ pokemon: res.data });
+       
+        this.forceUpdate();
+
       })
       .catch(err => console.log(err));
   };
 
+  getDeleteId = (e, id) => {
+    localStorage.setItem("deleteId", id);
+  };
+
   render() {
+    console.log(this.props.backpackPokemon);
     let pokemon = this.state.pokemon;
     return (
       <div className="backpack-container">
         {pokemon &&
           pokemon.map(poke => (
             <div key={poke.id}>
-              <NavLink to={`/dashboard/${poke.pokedex_number}`}>
+              <NavLink
+                onClick={e => this.getDeleteId(e, poke.id)}
+                to={`/dashboard/${poke.pokedex_number}`}
+              >
                 <BackpackPokemon poke={poke} />
               </NavLink>
             </div>

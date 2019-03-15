@@ -35,6 +35,27 @@ class Dashboard extends Component {
     }
   };
 
+  removeFromBackpack = () => {
+    axios
+      .delete(
+        `https://pokepokepokedex.herokuapp.com/api/backpack/${
+          localStorage.deleteId
+        }`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: window.localStorage.token
+          }
+        }
+      )
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
+    console.log(this.state.backpackPokemon);
+    this.props.history.push("/backpack");
+  };
+
   displayPokemon = () => {
     let pokemon = [];
     if (this.state.pokemonSearched.id == this.props.match.params.id) {
@@ -676,6 +697,26 @@ class Dashboard extends Component {
               + Catch Pokemon
             </button>
           </Link>
+
+          {/* <Link
+            onClick={() =>
+              this.props.removeFromBackpack({
+                pokedex_number: pokemon.pokedex_number,
+                pokemon: pokemon
+              })
+            }
+            to="/backpack"
+          > */}
+          <button
+            onClick={() => this.removeFromBackpack(pokemon.id)}
+            className="delete-pokemon"
+            style={{
+              borderColor: determineColor(pokemon.type1)
+            }}
+          >
+            - Release Pokemon
+          </button>
+          {/* </Link> */}
         </div>
         <div
           className="Stat-Page"

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import Register from './Register';
-import Login from './Login';
-import { Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import axios from 'axios';
-import './App.css';
-import Backpack from './components/Backpack';
+import React, { Component } from "react";
+import Register from "./Register";
+import Login from "./Login";
+import { Route } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import axios from "axios";
+import "./App.css";
+import Backpack from "./components/Backpack";
 
 class App extends Component {
   state = {
@@ -19,7 +19,7 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    if (localStorage.getItem('token')) {
+    if (localStorage.getItem("token")) {
       axios
         .get(
           `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${
@@ -27,33 +27,36 @@ class App extends Component {
           }`,
           {
             headers: {
-              'Content-Type': 'application/json',
+              "Content-Type": "application/json",
               Authorization: window.localStorage.token
             }
           }
         )
-        .then(res => this.setState({ pokemon: res.data.data }))
+        .then(res => {
+          this.setState({ pokemon: res.data.data });
+          this.forceUpdate();
+        })
         .catch(err => console.log(err));
     } else {
-      this.props.history.push('/');
+      this.props.history.push("/");
     }
   };
 
   pageChange = event => {
     // debugger;
-    if (event.target.name === 'prev' && this.state.pageNumber === 1) {
+    if (event.target.name === "prev" && this.state.pageNumber === 1) {
       return;
     }
 
-    if (event.target.name === 'next') {
-      if (localStorage.getItem('token')) {
+    if (event.target.name === "next") {
+      if (localStorage.getItem("token")) {
         axios
           .get(
             `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${this.state
               .pageNumber + 1}`,
             {
               headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
                 Authorization: window.localStorage.token
               }
             }
@@ -61,18 +64,18 @@ class App extends Component {
           .then(res => this.setState({ pokemon: res.data.data }))
           .catch(err => console.log(err));
       } else {
-        this.props.history.push('/login');
+        this.props.history.push("/login");
       }
       this.setState({ pageNumber: this.state.pageNumber + 1 });
     } else {
-      if (localStorage.getItem('token')) {
+      if (localStorage.getItem("token")) {
         axios
           .get(
             `https://pokepokepokedex.herokuapp.com/api/pokemon?page=${this.state
               .pageNumber - 1}`,
             {
               headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
                 Authorization: window.localStorage.token
               }
             }
@@ -80,7 +83,7 @@ class App extends Component {
           .then(res => this.setState({ pokemon: res.data.data }))
           .catch(err => console.log(err));
       } else {
-        this.props.history.push('/login');
+        this.props.history.push("/login");
       }
       this.setState({ pageNumber: this.state.pageNumber - 1 });
     }
@@ -88,7 +91,7 @@ class App extends Component {
 
   addDefaultSrc(ev) {
     ev.target.src =
-      'https://res.cloudinary.com/kingmuze/image/upload/v1552582092/PokeBall.gif';
+      "https://res.cloudinary.com/kingmuze/image/upload/v1552582092/PokeBall.gif";
   }
 
   addToBackpack = body => {
@@ -99,7 +102,7 @@ class App extends Component {
     axios
       .post(`https://pokepokepokedex.herokuapp.com/api/backpack`, body, {
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           Authorization: window.localStorage.token
         }
       })
@@ -117,7 +120,7 @@ class App extends Component {
         <Route component={Nav} />
         <Route
           exact
-          path='/home'
+          path="/home"
           render={props => (
             <Home
               {...props}
@@ -128,7 +131,7 @@ class App extends Component {
           )}
         />
         <Route
-          path='/dashboard/:id'
+          path="/dashboard/:id"
           render={props => (
             <Dashboard
               {...props}
@@ -147,20 +150,20 @@ class App extends Component {
         />
 
         <Route
-          path='/backpack'
+          path="/backpack"
           render={props => (
             <Backpack {...props} backpackPokemon={this.state.backpackPokemon} />
           )}
         />
-        <Route exact path='/' component={Login} />
-        <Route exact path='/register' component={Register} />
-        <div className='bg-elements'>
-          <span className='sidebar-left' />
-          <span className='sidebar-right' />
-          <span className='bar-bottom' />
-          <span className='dotted-grid' />
-          <span className='bg-image' />
-          <span className='blur' />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <div className="bg-elements">
+          <span className="sidebar-left" />
+          <span className="sidebar-right" />
+          <span className="bar-bottom" />
+          <span className="dotted-grid" />
+          <span className="bg-image" />
+          <span className="blur" />
         </div>
       </>
     );

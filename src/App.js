@@ -109,6 +109,7 @@ class App extends Component {
       .then(res => {
         this.setState({ backpackPokemon: res });
         console.log(res);
+        this.forceUpdate();
       })
       .catch(err => console.log(err));
     console.log(this.state.backpackPokemon);

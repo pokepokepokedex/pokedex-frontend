@@ -17,6 +17,12 @@
   overflow-x: hidden;
 }
 
+@media (max-width: 1550px) {
+  .home-container {
+    height: 76vh;
+  }
+}
+
 .home-container::-webkit-scrollbar {
   width: 10px;
 }

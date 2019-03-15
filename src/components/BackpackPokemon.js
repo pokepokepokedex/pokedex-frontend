@@ -11,10 +11,12 @@ const BackpackPokemon = ({ poke, addDefaultSrc }) => {
           <img
             src={require(`../assets/pokedex_top.png`)}
             className='pokedex-top'
+            alt='pokedex'
           />
           <img
             src={require(`../assets/pokedex_bottom.png`)}
             className='pokedex-bottom'
+            alt='pokedex'
           />
           <span className='hologram-bg' />
         </div>
@@ -24,10 +26,15 @@ const BackpackPokemon = ({ poke, addDefaultSrc }) => {
             poke.name
           }.gif`}
           alt='pokemon'
-          className='home-pokemon'
+          className='backpack-pokemon'
           onError={addDefaultSrc}
         />
       </div>
+      {/* <img
+        src={require(`../assets/delete.png`)}
+        alt='delete'
+        className='delete-btn'
+      /> */}
     </>
   );
 };

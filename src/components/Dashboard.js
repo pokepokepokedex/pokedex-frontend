@@ -56,93 +56,77 @@ class Dashboard extends Component {
       let colorResult;
       switch (type) {
         case "fire":
-          {
-            colorResult = "red";
-          }
+          colorResult = "red";
+
           break;
         case "water":
-          {
-            colorResult = "#09E1FF";
-          }
+          colorResult = "#09E1FF";
+
           break;
         case "normal":
-          {
-            colorResult = "#1DFDA8";
-          }
+          colorResult = "#1DFDA8";
+
           break;
         case "poison":
-          {
-            colorResult = "#B918FF";
-          }
+          colorResult = "#B918FF";
+
           break;
         case "electric":
-          {
-            colorResult = "yellow";
-          }
+          colorResult = "yellow";
+
           break;
         case "ground":
-          {
-            colorResult = "#FF9C15";
-          }
+          colorResult = "#FF9C15";
+
           break;
         case "fairy":
-          {
-            colorResult = "#FF69B4";
-          }
+          colorResult = "#FF69B4";
+
           break;
         case "grass":
-          {
-            colorResult = "#34FF5C";
-          }
+          colorResult = "#34FF5C";
+
           break;
         case "bug":
-          {
-            colorResult = "#90EE38";
-          }
+          colorResult = "#90EE38";
+
           break;
         case "psychic":
-          {
-            colorResult = "#B71ECF";
-          }
+          colorResult = "#B71ECF";
+
           break;
         case "rock":
-          {
-            colorResult = "#DCB883";
-          }
+          colorResult = "#DCB883";
+
           break;
         case "fighting":
-          {
-            colorResult = "#FF3A17";
-          }
+          colorResult = "#FF3A17";
+
           break;
         case "ghost":
-          {
-            colorResult = "#6817FF";
-          }
+          colorResult = "#6817FF";
+
           break;
         case "ice":
-          {
-            colorResult = "#52FFFA";
-          }
+          colorResult = "#52FFFA";
+
           break;
         case "dragon":
-          {
-            colorResult = "#A533FF";
-          }
+          colorResult = "#A533FF";
+
           break;
         case "dark":
-          {
-            colorResult = "#3D009C";
-          }
+          colorResult = "#3D009C";
+
           break;
         case "flying":
-          {
-            colorResult = "#4DA1FF";
-          }
+          colorResult = "#4DA1FF";
+
           break;
-        case "steel": {
+        case "steel":
           colorResult = "#BFBFBF";
-        }
+        default:
+          return;
       }
       return colorResult;
     };
@@ -151,93 +135,77 @@ class Dashboard extends Component {
       let tableResult;
       switch (type) {
         case "fire":
-          {
-            tableResult = "https://i.ibb.co/fMkqPdG/Turtable-fire.png";
-          }
+          tableResult = "https://i.ibb.co/fMkqPdG/Turtable-fire.png";
+
           break;
         case "water":
-          {
-            tableResult = "https://i.ibb.co/Y24KNd5/Turtable-beach.png";
-          }
+          tableResult = "https://i.ibb.co/Y24KNd5/Turtable-beach.png";
+
           break;
         case "normal":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "poison":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "electric":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "ground":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "fairy":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "grass":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "bug":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "psychic":
-          {
-            tableResult = "https://i.ibb.co/nzMhTnr/Turtable-dark.png";
-          }
+          tableResult = "https://i.ibb.co/nzMhTnr/Turtable-dark.png";
+
           break;
         case "rock":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "fighting":
-          {
-            tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-          }
+          tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+
           break;
         case "ghost":
-          {
-            tableResult = "https://i.ibb.co/nzMhTnr/Turtable-dark.png";
-          }
+          tableResult = "https://i.ibb.co/nzMhTnr/Turtable-dark.png";
+
           break;
         case "ice":
-          {
-            tableResult = "https://i.ibb.co/4Vv7hkZ/Turtable-snow.png";
-          }
+          tableResult = "https://i.ibb.co/4Vv7hkZ/Turtable-snow.png";
+
           break;
         case "dragon":
-          {
-            tableResult = "https://i.ibb.co/fMkqPdG/Turtable-fire.png";
-          }
+          tableResult = "https://i.ibb.co/fMkqPdG/Turtable-fire.png";
+
           break;
         case "dark":
-          {
-            tableResult = "https://i.ibb.co/nzMhTnr/Turtable-dark.png";
-          }
+          tableResult = "https://i.ibb.co/nzMhTnr/Turtable-dark.png";
+
           break;
         case "flying":
-          {
-            tableResult = "https://i.ibb.co/CHWTLvq/Turtable-sky.png";
-          }
+          tableResult = "https://i.ibb.co/CHWTLvq/Turtable-sky.png";
+
           break;
-        case "steel": {
+        case "steel":
           tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
-        }
+        default:
+          return;
       }
       return tableResult;
     };
@@ -506,7 +474,6 @@ class Dashboard extends Component {
               <p>SPEED</p>
             </div>
           </div>
-          _gaussian2.png
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="552"

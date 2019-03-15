@@ -68,7 +68,7 @@
   top: 25vh;
   text-transform: uppercase;
   transition: 0.3s ease-in-out;
-  visibility: hidden;
+  opacity: 0;
 }
 
 .hologram-bg {
@@ -100,10 +100,10 @@
 .pokeball-backpack:hover > .hologram-bg {
   transition: 0.3s ease-in-out;
   height: 30vh;
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .pokeball-backpack:hover > .pokedex-name {
   transition: 0.3s ease-in-out;
-  visibility: visible;
+  opacity: 1;
 }

@@ -3,7 +3,7 @@ import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 import axios from "axios";
 import "./Dashboard.css";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -51,7 +51,6 @@ class Dashboard extends Component {
     return this.props.randomPokemon[index];
   };
   render() {
-    console.log("object", this.props.randomPokemon);
     const determineColor = type => {
       let colorResult;
       switch (type) {
@@ -125,6 +124,7 @@ class Dashboard extends Component {
           break;
         case "steel":
           colorResult = "#BFBFBF";
+          break;
         default:
           return;
       }
@@ -204,6 +204,7 @@ class Dashboard extends Component {
           break;
         case "steel":
           tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+          break;
         default:
           return;
       }

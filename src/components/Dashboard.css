@@ -234,7 +234,28 @@
   font-size: 1.4vh;
 }
 
+.delete-pokemon {
+  position: absolute;
+  color: white;
+  top: 175px;
+  height: 5vh;
+  left: 45%;
+  width: 25vh;
+  border: 3px solid;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.4vh;
+}
+
 .add-pokemon:hover {
+  filter: brightness(120%);
+  background-color: rgba(56, 56, 56, 0.24);
+}
+
+.delete-pokemon:hover {
   filter: brightness(120%);
   background-color: rgba(56, 56, 56, 0.24);
 }

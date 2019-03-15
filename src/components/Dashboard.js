@@ -3,7 +3,7 @@ import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 import axios from "axios";
 import "./Dashboard.css";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
   constructor(props) {
@@ -35,6 +35,27 @@ class Dashboard extends Component {
     }
   };
 
+  removeFromBackpack = () => {
+    axios
+      .delete(
+        `https://pokepokepokedex.herokuapp.com/api/backpack/${
+          localStorage.deleteId
+        }`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: window.localStorage.token
+          }
+        }
+      )
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
+    console.log(this.state.backpackPokemon);
+    this.props.history.push("/backpack");
+  };
+
   displayPokemon = () => {
     let pokemon = [];
     if (this.state.pokemonSearched.id == this.props.match.params.id) {
@@ -51,7 +72,6 @@ class Dashboard extends Component {
     return this.props.randomPokemon[index];
   };
   render() {
-    console.log("object", this.props.randomPokemon);
     const determineColor = type => {
       let colorResult;
       switch (type) {
@@ -125,6 +145,7 @@ class Dashboard extends Component {
           break;
         case "steel":
           colorResult = "#BFBFBF";
+          break;
         default:
           return;
       }
@@ -204,6 +225,7 @@ class Dashboard extends Component {
           break;
         case "steel":
           tableResult = "https://i.ibb.co/FsYbFB7/Turtable.png";
+          break;
         default:
           return;
       }
@@ -675,6 +697,26 @@ class Dashboard extends Component {
               + Catch Pokemon
             </button>
           </Link>
+
+          {/* <Link
+            onClick={() =>
+              this.props.removeFromBackpack({
+                pokedex_number: pokemon.pokedex_number,
+                pokemon: pokemon
+              })
+            }
+            to="/backpack"
+          > */}
+          <button
+            onClick={() => this.removeFromBackpack(pokemon.id)}
+            className="delete-pokemon"
+            style={{
+              borderColor: determineColor(pokemon.type1)
+            }}
+          >
+            - Release Pokemon
+          </button>
+          {/* </Link> */}
         </div>
         <div
           className="Stat-Page"

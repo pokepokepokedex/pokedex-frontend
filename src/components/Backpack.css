@@ -94,13 +94,8 @@
   );
   border: 1px solid cyan;
   width: 26vh;
-<<<<<<< HEAD
   height: 20vh;
   top: 120px;
-=======
-  height: 22vh;
-  top: 90px;
->>>>>>> 462e8dfefe0556fb74c44988a923e3b8c5e2402b
   left: 0.8vh;
   transition: 0.3s ease-in-out;
   z-index: 50;

@@ -1,5 +1,6 @@
 .backpack-container {
   position: absolute;
+  position: fixed;
   z-index: 200;
   top: 95px;
   padding-top: 20px;
@@ -8,13 +9,12 @@
   margin: 0 auto;
   margin-right: 90px;
   margin-left: 90px;
-  height: 80vh; /* HEIGHT NEEDS BREAKPOINTS */
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(36vh, 1fr));
-  grid-auto-rows: 50vh;
+  grid-auto-rows: 45vh;
   grid-column-gap: 1vh;
   overflow: scroll;
-  overflow-x: hidden;
 }
 .backpack-container::-webkit-scrollbar {
   width: 10px;
@@ -70,15 +70,15 @@
 }
 
 .pokedex-name {
+  width: 92%;
+  text-align: center;
   position: absolute;
-  left: 0;
-  right: 0;
-  margin: 28px auto;
+  margin: 48px auto;
   z-index: 49;
   color: white;
   font-weight: 400;
   font-size: 4vh;
-  margin-left: 8vh;
+  margin-left: 1vh;
   top: 25vh;
   text-transform: uppercase;
   transition: 0.3s ease-in-out;
@@ -94,8 +94,13 @@
   );
   border: 1px solid cyan;
   width: 26vh;
+<<<<<<< HEAD
+  height: 20vh;
+  top: 120px;
+=======
   height: 22vh;
   top: 90px;
+>>>>>>> 462e8dfefe0556fb74c44988a923e3b8c5e2402b
   left: 0.8vh;
   transition: 0.3s ease-in-out;
   z-index: 50;
@@ -113,7 +118,8 @@
 
 .pokeball-backpack:hover > .hologram-bg {
   transition: 0.3s ease-in-out;
-  height: 30vh;
+  height: 35vh;
+  top: 100px;
   opacity: 0.3;
 }
 

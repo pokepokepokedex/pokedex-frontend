@@ -84,7 +84,9 @@ class Home extends Component {
     let pokemon = this.choosePokemon();
     let type = this.chooseType();
     pokemon = pokemon.filter(poke =>
-      this.state.type === "" ? poke : poke.type1.includes(this.state.type)
+      this.state.type === ""
+        ? poke
+        : poke.type1.toUpperCase().includes(this.state.type.toUpperCase())
     );
     type = type.filter(poke =>
       this.state.search === ""

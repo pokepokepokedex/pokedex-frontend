@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.212);
   top: 0;
   left: 0;
   padding: 28px 0;
@@ -22,7 +22,9 @@
   letter-spacing: 8px;
   text-transform: uppercase;
   font-weight: 400;
-  bottom: 0;
+  font-size: 1.2rem;
+  right: 2vh;
+  top: 2vh;
 }
 
 .pokemon-logo {

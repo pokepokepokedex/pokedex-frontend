@@ -1,15 +1,16 @@
 # pokestats
 
-Pokestats is a simple database where you can view pokemon and their stats. You can even save your favorite pokemon
-to your backpack so you can view them later!
+Pokestats is a simple database where you can view pokemon and their stats. Your favorite pokemon
+can be saved to the "backpack" so you can view them later!
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Following the instructions below and acquire a copy of the project, run on your local machine for development and testing purposes. See deployment for notes on how to deploy this application on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Requirements and tutorial of installation  
+
 
 ```
 Give examples
@@ -17,7 +18,7 @@ Give examples
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+A step by step series of examples on running a development environment 
 
 Say what the step will be
 
@@ -31,7 +32,7 @@ And repeat
 until finished
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+End with an example of getting some data out of the system or using it for a demo
 
 ## Running the tests
 
@@ -39,7 +40,7 @@ Explain how to run the automated tests for this system
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+Explain the purpose of these tests  
 
 ```
 Give an example
@@ -47,7 +48,7 @@ Give an example
 
 ### And coding style tests
 
-Explain what these tests test and why
+Explain the purpose of these tests 
 
 ```
 Give an example
@@ -55,13 +56,13 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Add additional notes about deployment on a live system
 
 ## Built With
 
 * [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
 * [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [ROME](https://rometools.github.io/rome/) - RSS Feeds generation
 
 ## Contributing
 

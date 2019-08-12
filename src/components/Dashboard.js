@@ -1,9 +1,10 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 import axios from "axios";
+
 import "./Dashboard.css";
-import { Link } from "react-router-dom";
 
 class Dashboard extends Component {
   constructor(props) {

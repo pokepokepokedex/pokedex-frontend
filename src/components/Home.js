@@ -4,8 +4,10 @@ import axios from "axios";
 
 import Search from "./Search";
 
-import "./Home.css";
+import "./Home.scss";
 import Pokemon from "./Pokemon";
+import next from "../assets/chevrons-right.svg";
+import prev from "../assets/chevrons-left.svg";
 
 class Home extends Component {
   constructor(props) {
@@ -96,6 +98,22 @@ class Home extends Component {
 
     return (
       <>
+        <div className="page-btns-flex">
+          <img
+            src={prev}
+            alt="prev"
+            className={this.props.pageNumber === 1 ? "prev disabled" : "prev"}
+            name="prev"
+            onClick={pageChange}
+          />
+          <img
+            src={next}
+            alt="next"
+            className="next"
+            name="next"
+            onClick={pageChange}
+          />
+        </div>
         <div className="home-container">
           <Search
             submitSearch={this.submitSearch}
@@ -120,21 +138,6 @@ class Home extends Component {
                 </div>
               ))}
         </div>
-
-        <img
-          src={require(`../assets/chevrons-left.svg`)}
-          alt="prev"
-          className={this.props.pageNumber === 1 ? "prev disabled" : "prev"}
-          name="prev"
-          onClick={pageChange}
-        />
-        <img
-          src={require(`../assets/chevrons-right.svg`)}
-          alt="next"
-          className="next"
-          name="next"
-          onClick={pageChange}
-        />
       </>
     );
   }

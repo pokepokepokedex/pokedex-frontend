@@ -1,0 +1,108 @@
+.home-container {
+  position: relative;
+  z-index: 500;
+  width: 88%;
+  margin: 14vh auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 85vh;
+
+  .single-pokemon {
+    width: 40vh;
+    height: 40vh;
+    position: relative;
+
+    .pokemon-info {
+      position: absolute;
+      bottom: 4vh;
+      left: 4vh;
+      height: 32vh;
+      width: 78%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .pokemon-name {
+        margin: 0;
+        margin-left: 4vh;
+        margin-top: 2vh;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.8;
+      }
+
+      .pokemon-type {
+        margin: 0;
+        margin-left: 4vh;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        opacity: 0.8;
+      }
+    }
+
+    .home-pokemon {
+      min-width: auto;
+      max-height: 20vh;
+      margin: 0 auto;
+      opacity: 0.8;
+    }
+  }
+}
+.page-btns-flex {
+  position: absolute;
+  z-index: 900;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 95%;
+  margin: auto auto;
+  display: flex;
+  justify-content: space-between;
+
+  .next,
+  .prev {
+    width: 5vh;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
+  .next:hover,
+  .prev:hover {
+    opacity: 1;
+  }
+}
+
+.disabled {
+  opacity: 0;
+}
+
+.search-container {
+  position: relative;
+  width: 98%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-container input {
+  font-size: 1rem;
+  width: 30vh;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.068);
+  border: 1.4px solid rgba(255, 255, 255, 0.185);
+  color: white;
+  outline: none;
+}
+
+.search-container input::placeholder {
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: "Teko", sans-serif;
+}

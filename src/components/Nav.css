@@ -2,7 +2,7 @@
   position: absolute;
   pointer-events: none;
   user-select: none;
-  z-index: 500;
+  z-index: 9999999;
   width: 99.9%;
   display: flex;
   justify-content: center;

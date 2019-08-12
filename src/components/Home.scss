@@ -104,6 +104,11 @@
   border: 1.4px solid rgba(255, 255, 255, 0.185);
   color: white;
   outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-container input:hover {
+  border: 1.4px solid white;
 }
 
 .search-container input::placeholder {

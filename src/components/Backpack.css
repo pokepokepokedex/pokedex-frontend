@@ -27,19 +27,26 @@
 }
 
 .pokeball-backpack {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 18vh;
   height: 50vh;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  width: max-content;
 }
 
 .backpack-pokemon {
+  position: absolute;
   max-width: 20vh;
   min-height: 15vh;
   max-height: 15vh;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /* left: -14vh; */
 }
 
 .delete-btn {
@@ -94,8 +101,10 @@
   );
   border: 1px solid cyan;
   width: 26vh;
-  height: 20vh;
-  top: 120px;
+  height: 60%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   left: 0.8vh;
   transition: 0.3s ease-in-out;
   z-index: 50;
@@ -113,8 +122,10 @@
 
 .pokeball-backpack:hover > .hologram-bg {
   transition: 0.3s ease-in-out;
-  height: 35vh;
-  top: 100px;
+  height: 78%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   opacity: 0.3;
 }
 

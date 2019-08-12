@@ -677,47 +677,39 @@ class Dashboard extends Component {
             <p>Abilities: {pokemon.abilities}</p>
           </div>
 
-          <Link
-            onClick={() =>
-              this.props.addToBackpack({
-                type1: pokemon.type1,
-                type2: pokemon.type2,
-                name: pokemon.name,
-                pokedex_number: pokemon.pokedex_number,
-                users_id: window.localStorage.id
-              })
-            }
-            to="/backpack"
-          >
+          <div className="button-flex">
+            <Link
+              onClick={() =>
+                this.props.addToBackpack({
+                  type1: pokemon.type1,
+                  type2: pokemon.type2,
+                  name: pokemon.name,
+                  pokedex_number: pokemon.pokedex_number,
+                  users_id: window.localStorage.id
+                })
+              }
+              to="/backpack"
+            >
+              <button
+                className="add-pokemon"
+                style={{
+                  borderColor: determineColor(pokemon.type1)
+                }}
+              >
+                + Catch Pokemon
+              </button>
+            </Link>
+
             <button
-              className="add-pokemon"
+              onClick={() => this.removeFromBackpack(pokemon.id)}
+              className="delete-pokemon"
               style={{
                 borderColor: determineColor(pokemon.type1)
               }}
             >
-              + Catch Pokemon
+              - Release Pokemon
             </button>
-          </Link>
-
-          {/* <Link
-            onClick={() =>
-              this.props.removeFromBackpack({
-                pokedex_number: pokemon.pokedex_number,
-                pokemon: pokemon
-              })
-            }
-            to="/backpack"
-          > */}
-          <button
-            onClick={() => this.removeFromBackpack(pokemon.id)}
-            className="delete-pokemon"
-            style={{
-              borderColor: determineColor(pokemon.type1)
-            }}
-          >
-            - Release Pokemon
-          </button>
-          {/* </Link> */}
+          </div>
         </div>
         <div
           className="Stat-Page"

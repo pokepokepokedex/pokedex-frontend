@@ -29,7 +29,7 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    let token = localStorage.getItem("token");
+    // let token = localStorage.getItem("token");
     axios
       .get("https://pokepokepokedex.herokuapp.com/api/pokemon/all", {
         headers: {

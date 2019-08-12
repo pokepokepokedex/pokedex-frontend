@@ -30,24 +30,20 @@ class Home extends Component {
 
   componentDidMount() {
     let token = localStorage.getItem("token");
-    if (token) {
-      axios
-        .get("https://pokepokepokedex.herokuapp.com/api/pokemon/all", {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: window.localStorage.token
-          }
-        })
-        .then(res => {
-          this.setState({
-            searchArray: res.data,
-            typeArray: res.data
-          });
-        })
-        .catch(err => err);
-    } else {
-      this.props.history.push("/");
-    }
+    axios
+      .get("https://pokepokepokedex.herokuapp.com/api/pokemon/all", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: window.localStorage.token
+        }
+      })
+      .then(res => {
+        this.setState({
+          searchArray: res.data,
+          typeArray: res.data
+        });
+      })
+      .catch(err => err);
   }
 
   choosePokemon = () => {

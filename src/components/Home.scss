@@ -51,29 +51,35 @@
     }
   }
 }
-.page-btns-flex {
+
+.next {
   position: absolute;
   z-index: 900;
-  left: 0;
-  right: 0;
+  right: 4vh;
   top: 0;
   bottom: 0;
-  width: 95%;
-  margin: auto auto;
-  display: flex;
-  justify-content: space-between;
+  margin: auto 0;
+}
 
-  .next,
-  .prev {
-    width: 5vh;
-    cursor: pointer;
-    opacity: 0.5;
-  }
+.prev {
+  position: absolute;
+  z-index: 900;
+  left: 4vh;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
 
-  .next:hover,
-  .prev:hover {
-    opacity: 1;
-  }
+.next,
+.prev {
+  width: 5vh;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.next:hover,
+.prev:hover {
+  opacity: 1;
 }
 
 .disabled {

@@ -16,7 +16,8 @@ class Home extends Component {
       search: "",
       searchArray: [],
       type: "",
-      typeArray: []
+      typeArray: [],
+      pokemonAll: []
     };
   }
 
@@ -32,15 +33,16 @@ class Home extends Component {
     // let token = localStorage.getItem("token");
     axios
       .get("https://pokepokepokedex.herokuapp.com/api/pokemon/all", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: window.localStorage.token
-        }
+        // headers: {
+        //   "Content-Type": "application/json",
+        //   Authorization: window.localStorage.token
+        // }
       })
       .then(res => {
         this.setState({
           searchArray: res.data,
-          typeArray: res.data
+          typeArray: res.data,
+          pokemonAll: res.data
         });
       })
       .catch(err => err);

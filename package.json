@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "cloudinary-react": "^1.1.0",
     "node-sass": "^4.12.0",
     "plotly.js": "^1.45.2",
